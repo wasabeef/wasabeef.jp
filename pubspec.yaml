@@ -1,0 +1,35 @@
+name: wasabeef_jp
+description: Daichi Furiya (Wasabeef)
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+  flutter: '>=1.22.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  gap: ^1.2.0
+  google_fonts: ^1.1.1
+  font_awesome_flutter: ^8.10.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # For Analyzer
+  effective_dart: ^1.3.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Rotunda
+      fonts:
+        - asset: assets/fonts/Rotunda-Bold.otf
+          weight: 700
