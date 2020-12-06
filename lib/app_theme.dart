@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'gen/fonts.gen.dart';
 
@@ -20,7 +19,8 @@ const secondaryColor = Color(0xff555555);
 ThemeData get appTheme {
   return ThemeData.light().copyWith(
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    textTheme: GoogleFonts.notoSansTextTheme(ThemeData.light().textTheme)
+    textTheme: ThemeData.light()
+        .textTheme
         .copyWith(
           headline1: headline1,
           bodyText1: bodyText1,

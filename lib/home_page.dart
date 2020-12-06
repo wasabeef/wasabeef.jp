@@ -3,7 +3,6 @@ import 'dart:html';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gap/gap.dart';
 
 import 'app_theme.dart';
 import 'component/social_button.dart';
@@ -36,11 +35,12 @@ class HomePage extends StatelessWidget {
                   Text('Daichi Furiya',
                       style: Theme.of(context).textTheme.headline1),
                   const Text(
-                    'Github account is Wasabeef',
+                    'GitHub account is Wasabeef',
                     style: bodyText1,
                   ),
+                  const SizedBox(height: 4),
                   const Text(
-                    'Google Developers Expert for Android.',
+                    'Google Developers Expert for Android',
                     style: bodyText1,
                   ),
                   Wrap(
@@ -83,12 +83,12 @@ class HomePage extends StatelessWidget {
               children: [
                 Image.network(
                     'https://www.cutercounter.com/hit.php?id=grunxnap&nd=6&style=27'),
-                const Gap(4),
+                const SizedBox(height: 8),
                 const Text(
                   'Running on Flutter Web',
                   style: TextStyle(fontSize: 10),
                 ),
-                const Gap(18)
+                const SizedBox(height: 18)
               ],
             ),
           )
