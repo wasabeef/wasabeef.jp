@@ -16,33 +16,35 @@ class HomePage extends StatelessWidget {
       child: Stack(
         children: [
           Center(
-              child: Row(
-            mainAxisSize: MainAxisSize.min,
+              child: Wrap(
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            runAlignment: WrapAlignment.center,
+            runSpacing: 24,
+            spacing: 12,
             children: [
               CircleAvatar(
                 backgroundImage: Assets.images.profile,
                 backgroundColor: Colors.transparent,
                 radius: 85,
               ),
-              const Gap(12),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
+              Wrap(
+                alignment: WrapAlignment.center,
+                direction: Axis.vertical,
+                spacing: 4,
                 children: [
                   Text('Daichi Furiya',
                       style: Theme.of(context).textTheme.headline1),
-                  const Gap(8),
                   const Text(
                     'Github account is Wasabeef',
                     style: bodyText1,
                   ),
-                  const Gap(4),
                   const Text(
                     'Google Developers Expert for Android.',
                     style: bodyText1,
                   ),
-                  const Gap(4),
-                  Row(
+                  Wrap(
+                    spacing: 2,
                     children: [
                       const SocialButton(
                         icon: FontAwesomeIcons.medium,
