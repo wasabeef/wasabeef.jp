@@ -21,6 +21,7 @@ class HomePage extends StatelessWidget {
             children: [
               CircleAvatar(
                 backgroundImage: Assets.images.profile,
+                backgroundColor: Colors.transparent,
                 radius: 85,
               ),
               const Gap(12),

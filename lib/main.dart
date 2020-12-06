@@ -11,7 +11,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Daichi Furiya (Wasabeef)',
       theme: appTheme,
-      home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage()
+      },
     );
   }
 }
