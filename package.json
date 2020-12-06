@@ -1,0 +1,12 @@
+{
+  "name": "wasabeef_jp",
+  "author": "wasabeef",
+  "husky": {
+    "hooks": {
+      "pre-push": "flutter analyze && flutter format lib/"
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.3.0"
+  }
+}
