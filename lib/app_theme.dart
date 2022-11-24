@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'gen/fonts.gen.dart';
+import 'package:wasabeef_jp/gen/fonts.gen.dart';
 
 const headline1 = TextStyle(
   fontSize: 24,

@@ -17,8 +17,8 @@ firebase init
 
 ## Flutter web 
 ```sh
-$ flutter build web --release
-$ flutter run -d chrome
+flutter build web --release
+flutter run -d chrome
 ```
 
 ## firebase
