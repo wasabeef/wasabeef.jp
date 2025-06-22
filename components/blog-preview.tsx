@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { getRecentPosts } from "@/lib/blog";
-import { formatDateShort } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { Clock } from "lucide-react";
 
 export async function BlogPreview() {
   try {
-    const recentPosts = await getRecentPosts(3);
+    const recentPosts = await getRecentPosts(2);
 
     if (recentPosts.length === 0) {
       return (
@@ -27,22 +27,20 @@ export async function BlogPreview() {
           >
             <Link href={`/blog/${post.slug}`} className="block">
               <CardContent className="p-3 border-0">
-                <div className="flex flex-col space-y-1">
-                  <div className="flex items-center justify-between">
-                    <h3 className="line-clamp-1 font-medium">{post.title}</h3>
-                    <span className="text-xs text-muted-foreground">
-                      {formatDateShort(post.date)}
-                    </span>
-                  </div>
+                <div className="flex flex-col space-y-2">
+                  <h3 className="line-clamp-1 font-medium">{post.title}</h3>
                   <p className="line-clamp-1 text-xs text-muted-foreground">
                     {post.excerpt}
                   </p>
-                  {post.readingTime && (
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                      <Clock className="h-3 w-3" />
-                      <span>{post.readingTime}分で読める</span>
-                    </div>
-                  )}
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <span>{formatDate(post.date)}</span>
+                    {post.readingTime && (
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-3 w-3" />
+                        <span>{post.readingTime}分で読める</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </CardContent>
             </Link>

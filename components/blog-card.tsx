@@ -55,7 +55,7 @@ export function BlogCard({ post }: BlogCardProps) {
           {post.readingTime && (
             <div className="flex items-center gap-1">
               <Clock className="h-3 w-3" />
-              <span>{post.readingTime}分</span>
+              <span>{post.readingTime}分で読める</span>
             </div>
           )}
         </div>
