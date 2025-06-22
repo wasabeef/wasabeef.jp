@@ -1,7 +1,0 @@
-include: package:flutter_lints/flutter.yaml
-analyzer:
-
-linter:
-  rules:
-    public_member_api_docs: false
-    avoid_web_libraries_in_flutter: false

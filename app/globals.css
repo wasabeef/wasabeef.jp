@@ -1,0 +1,461 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    
+    /* Code block colors */
+    --code-bg: #f8f9fa;
+    --code-text: #24292e;
+    
+    /* Prism token colors */
+    --token-comment: #6a737d;
+    --token-punctuation: #24292e;
+    --token-property: #005cc5;
+    --token-string: #032f62;
+    --token-operator: #d73a49;
+    --token-keyword: #d73a49;
+    --token-function: #6f42c1;
+    --token-variable: #e36209;
+    
+    /* Typography */
+    --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+    
+    /* Spacing */
+    --code-padding: 1.5rem;
+    --code-font-size: 0.875rem;
+    --code-line-height: 1.6;
+    
+    /* Scrollbar */
+    --scrollbar-track: #e5e7eb;
+    --scrollbar-thumb: #9ca3af;
+    --scrollbar-thumb-hover: #6b7280;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  *:not(.code-block-container):not(.code-block-container *) {
+    @apply border-border;
+  }
+  
+  .code-block-container, .code-block-container * {
+    border: none !important;
+  }
+
+  pre, code {
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Override highlight.js theme styles */
+  .hljs, .hljs * {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+  }
+
+  body {
+    @apply bg-white text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-600;
+  }
+
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* Performance optimizations */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+  }
+
+  .contain-layout {
+    contain: layout;
+  }
+
+  .contain-paint {
+    contain: paint;
+  }
+}
+
+/* Code block optimizations */
+.code-block-container {
+  @apply my-6 overflow-hidden relative;
+  background: var(--code-bg);
+  contain: layout paint;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Prism.js custom theme */
+.code-block-container pre[class*="language-"] {
+  background: var(--code-bg) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: var(--code-padding) !important;
+  overflow: auto;
+}
+
+.code-block-container code[class*="language-"] {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: var(--code-text) !important;
+  font-family: var(--font-mono) !important;
+  font-size: var(--code-font-size) !important;
+  line-height: var(--code-line-height) !important;
+  text-shadow: none !important;
+}
+
+/* Prism token colors */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--token-comment) !important;
+}
+
+.token.punctuation {
+  color: var(--token-punctuation) !important;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--token-property) !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--token-string) !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--token-operator) !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--token-keyword) !important;
+}
+
+.token.function,
+.token.class-name {
+  color: var(--token-function) !important;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--token-variable) !important;
+}
+
+.code-language-label {
+  @apply absolute top-2 right-2 px-2 py-1 text-xs font-mono text-gray-500 bg-white/80 rounded z-10;
+  backdrop-filter: blur(4px);
+}
+
+.code-block-container pre {
+  @apply m-0 overflow-x-auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.code-block-container code {
+  @apply block p-4 text-sm;
+  font-family: var(--font-mono);
+  line-height: var(--code-line-height);
+  background: var(--code-bg) !important;
+  color: var(--code-text);
+  border-radius: 0 !important;
+  tab-size: 2;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.code-block-container .hljs {
+  background: var(--code-bg) !important;
+  color: var(--code-text) !important;
+  padding: var(--code-padding) !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.inline-code {
+  @apply bg-gray-100 px-2 py-1 rounded font-mono text-sm text-gray-800;
+  font-size: 0.875em;
+  word-break: break-word;
+  border: none;
+}
+
+/* Scrollbar improvements */
+.code-block-container code::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-block-container code::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 0.25rem;
+}
+
+.code-block-container code::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.code-block-container code::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Prose styling improvements */
+.prose {
+  @apply max-w-none text-gray-900;
+  line-height: 1.7;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  @apply scroll-mt-20;
+  text-wrap: balance;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mt-8 mb-4 text-gray-900;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold mt-6 mb-3 text-gray-900;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mt-5 mb-2 text-gray-900;
+}
+
+.prose p {
+  @apply my-4 text-gray-700 leading-relaxed;
+  text-wrap: pretty;
+}
+
+.prose ul,
+.prose ol {
+  @apply my-4 text-gray-700;
+}
+
+.prose ul {
+  @apply list-disc pl-6 space-y-1;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 space-y-1;
+}
+
+.prose li {
+  @apply leading-relaxed;
+}
+
+.prose a {
+  @apply text-blue-600 hover:text-blue-800 hover:underline transition-colors font-medium;
+  text-decoration-skip-ink: auto;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 my-6 bg-gray-50 py-3 rounded-r;
+}
+
+.prose table {
+  @apply w-full border-collapse;
+}
+
+.prose th,
+.prose td {
+  @apply px-4 py-3 text-left;
+}
+
+.prose th {
+  @apply border-b border-gray-300 bg-gray-50 font-semibold text-gray-900;
+}
+
+.prose td {
+  @apply border-b border-gray-200 text-gray-700;
+}
+
+.prose tr {
+  @apply hover:bg-gray-50 transition-colors;
+}
+
+.prose hr {
+  @apply my-8 border-gray-200;
+}
+
+.prose strong {
+  @apply font-semibold text-gray-900;
+}
+
+.prose em {
+  @apply italic text-gray-700;
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .code-block-container code {
+    @apply text-xs p-3;
+  }
+
+  .code-language-label {
+    @apply text-xs px-1.5 py-0.5;
+  }
+
+  .prose h1 {
+    @apply text-2xl;
+  }
+
+  .prose h2 {
+    @apply text-xl;
+  }
+
+  .prose h3 {
+    @apply text-lg;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .prose a {
+    @apply underline;
+  }
+
+  .code-block-container {
+    @apply border-2 border-gray-800;
+  }
+}
+
+/* Print styles */
+@media print {
+  .code-block-container {
+    @apply border border-gray-400;
+    break-inside: avoid;
+  }
+
+  .prose a {
+    @apply text-black underline;
+  }
+
+  .prose a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
+
+/* Loading states */
+.loading-skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Intersection observer optimizations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
