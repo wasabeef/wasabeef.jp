@@ -161,7 +161,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
     );
   } catch (error) {
-    console.error(`Error rendering blog post for slug ${params.slug}:`, error);
+    console.error(`Error rendering blog post:`, error);
     notFound();
   }
 }

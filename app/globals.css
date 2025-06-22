@@ -225,6 +225,78 @@
   color: var(--token-variable) !important;
 }
 
+/* Ruby specific */
+.token.symbol {
+  color: var(--token-keyword) !important;
+}
+
+/* YAML specific */
+.token.key {
+  color: var(--token-property) !important;
+}
+
+/* Gradle/Groovy specific */
+.token.groovy-keyword {
+  color: var(--token-keyword) !important;
+}
+
+/* XML specific */
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.token.namespace {
+  color: var(--token-comment) !important;
+}
+
+/* 言語指定なしのコードブロック用デフォルトスタイル */
+pre:not([class*="language-"]) code {
+  color: var(--code-text) !important;
+}
+
+/* 行番号のスタイル */
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: var(--code-font-size);
+  font-family: var(--font-mono);
+  left: 0;
+  width: 3em;
+  border-right: 1px solid #e5e7eb;
+  user-select: none;
+  line-height: var(--code-line-height);
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #9ca3af;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.code-block-container pre.line-numbers {
+  padding-left: 3.8em !important;
+}
+
 .code-language-label {
   @apply absolute top-2 right-2 px-2 py-1 text-xs font-mono text-gray-500 bg-white/80 rounded z-10;
   backdrop-filter: blur(4px);
@@ -240,8 +312,11 @@
 }
 
 .code-block-container code {
-  @apply block p-4 text-sm;
+  @apply block;
+  padding: 1rem !important;
+  padding-left: 3.8em !important;
   font-family: var(--font-mono);
+  font-size: var(--code-font-size);
   line-height: var(--code-line-height);
   background: var(--code-bg) !important;
   color: var(--code-text);
