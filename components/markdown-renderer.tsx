@@ -52,6 +52,11 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
           // ビルドツール
           await import("prismjs/components/prism-gradle");
           
+          // 追加言語
+          await import("prismjs/components/prism-lua");
+          await import("prismjs/components/prism-rust");
+          // TypeScript (ts)はJavaScriptの拡張として既にサポート済み
+          
           // プラグイン
           await import("prismjs/plugins/line-numbers/prism-line-numbers");
           await import("prismjs/plugins/line-numbers/prism-line-numbers.css");
