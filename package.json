@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "format": "prettier --write .",
-    "build": "next build",
-    "dev": "next dev",
+    "build": "node scripts/copy-blog-images.js && next build",
+    "dev": "node scripts/copy-blog-images.js && next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "copy-images": "node scripts/copy-blog-images.js"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

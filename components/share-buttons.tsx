@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Share2, Clipboard, Check } from "lucide-react";
 import { siteConfig } from "@/lib/config";
@@ -13,6 +13,11 @@ interface ShareButtonsProps {
 
 export function ShareButtons({ title, description, url }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const shareUrl = `${siteConfig.url}${url}`;
   const shareText = `${title} - ${siteConfig.name}`;
@@ -82,7 +87,7 @@ export function ShareButtons({ title, description, url }: ShareButtonsProps) {
       </button>
 
       {/* Native Share (mobile) */}
-      {typeof window !== "undefined" && navigator.share && (
+      {isClient && navigator.share && (
         <button
           onClick={nativeShare}
           className="flex items-center gap-1.5 hover:text-gray-900 transition-colors"

@@ -9,6 +9,7 @@
 
 # production
 /build
+dev.log
 
 # debug
 npm-debug.log*
@@ -26,4 +27,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# docs/

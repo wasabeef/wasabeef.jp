@@ -1,5 +1,5 @@
 ---
-title: "Flutter + Melso + Neovim 開発を効率化する melos.nvim を作りました。"
+title: "Flutter + Melos + Neovim 開発を効率化する melos.nvim を作りました。"
 description: "Melos スクリプトを Neovim から簡単に実行できるプラグインを開発しました。Telescope と連携してスクリプト管理を効率化します。"
 date: 2024-06-22
 tags: ["Neovim", "Flutter", "Development Tools"]
@@ -8,9 +8,9 @@ image: "https://github.com/wasabeef/melos.nvim/raw/main/demo.gif"
 
 こんにちは、わさびーふです。
 
-今回は Flutter + Melso + Neovim 開発で使える Neovim プラグイン「[melos.nvim](https://github.com/wasabeef/melos.nvim)」を作ったので紹介しようと思います。
+今回は Flutter + Melos + Neovim 開発で使える Neovim プラグイン「[melos.nvim](https://github.com/wasabeef/melos.nvim)」を作ったので紹介しようと思います。
 
-※注意点として、この記事は の組み合わせで開発している方向けの内容になります。これらのツールを使っていない場合は、あまり参考にならないかもしれません。
+※注意点として、この記事は **Flutter + Neovim + [Melos](https://melos.invertase.dev/)** の組み合わせで開発している方向けの内容になります。これらのツールを使っていない場合は、あまり参考にならないかもしれません。
 
 この記事では以下の内容について説明します。
 
@@ -21,22 +21,19 @@ image: "https://github.com/wasabeef/melos.nvim/raw/main/demo.gif"
 
 ## melos.nvim とは
 
-melos.nvim は、[Melos](https://melos.invertase.dev/) のスクリプトを Neovim から直接実行できるプラグインです。
+melos.nvim は、Dart/Flutter の monorepo 管理ツールである [Melos](https://melos.invertase.dev/) のスクリプトを Neovim から直接実行できるプラグインです。
 
 Telescope.nvim と連携することで、`melos.yaml` に定義されたスクリプトを一覧表示し、選択して実行することができます。
 
 実際の動作は以下の動画で確認できます。
 
-<video controls width="100%">
-  <source src="https://github.com/user-attachments/assets/e69f5d74-9080-490e-b21f-d68502987f89" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+![melos.nvim デモ](/images/blog/melos-nvim-introduction/melos.nvim.gif)
 
 ## 作成のきっかけ
 
 ### 問題
 
-Flutter の大規模プロジェクトで [Melos](https://melos.invertase.dev/) を使った開発をしていると、以下のような問題がありました。
+Flutter の大規模プロジェクトで [Melos](https://melos.invertase.dev/) を使った monorepo 開発をしていると、以下のような問題がありました。
 
 - `melos.yaml` に定義されたスクリプトが多数あり、どんなスクリプトがあるか覚えきれない
 - ターミナルとエディタを行き来するのが面倒
@@ -151,19 +148,13 @@ vim.keymap.set("n", "<leader>mo", ":MelosOpen<CR>")
 
 ### デメリット
 
-- `yq` の事前インストールが必要
 - Melos を使っていないプロジェクトでは意味がない
-- Telescope.nvim への依存
 
 ## まとめ
 
-melos.nvim を使うことで、Flutter/Dart の monorepo 開発における [Melos](https://melos.invertase.dev/) スクリプトの管理が大幅に効率化されました。
-
-特に大規模なプロジェクトでスクリプトが多数定義されている場合に、その効果を実感できます。
-
-ぜひ参考にしてください。
-
+地味に打つの面倒くさかったので楽になりました。
 おしまい
 
 GitHub: https://github.com/wasabeef/melos.nvim
+
 
