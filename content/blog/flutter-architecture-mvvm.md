@@ -2,7 +2,7 @@
 title: "#0 Flutter の設計を決める"
 date: "2020-08-19"
 description: "Flutter Architecture Blueprintsの実装解説シリーズ第0回。なぜMVVMを選んだのか、その理由と今後の展望について"
-tags: ["Flutter", "Architecture", "MVVM", "Development"]
+tags: ["Flutter", "Architecture", "MVVM"]
 image: "/images/blog/flutter-architecture-mvvm.jpg"
 ---
 

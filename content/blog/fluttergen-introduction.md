@@ -2,7 +2,7 @@
 title: "コード自動生成の FlutterGen を作りました。"
 description: "Flutter 向けに画像リソースなどのコードを自動生成するためのツールです。"
 date: 2020-09-07
-tags: ["flutter", "dart", "development-tools", "open-source"]
+tags: ["Flutter", "Dart", "Development Tools"]
 image: "https://cdn-images-1.medium.com/max/800/1*HhHR21Cy-ziyWKkmmH7jQw.jpeg"
 ---
 

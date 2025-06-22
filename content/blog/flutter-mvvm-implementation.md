@@ -2,7 +2,7 @@
 title: "Flutter を MVVM で実装する"
 description: "この記事は Flutter Architecture Blueprints の解説記事です。今回は Flutter アプリを MVVM で実装する上でどういう形にしていったかを解説していきたいと思います。"
 date: "2020-08-28"
-tags: ["Flutter", "MVVM", "Architecture", "Riverpod", "Flutter Hooks"]
+tags: ["Flutter", "MVVM", "Architecture"]
 image: "https://cdn-images-1.medium.com/max/800/1*CJbujz_HOZNwk6uRClZMQA.jpeg"
 ---
 

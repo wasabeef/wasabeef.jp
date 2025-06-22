@@ -2,7 +2,7 @@
 title: "2023年から pnpm + commitlint + git-cz でコミットメッセージを Conventional Commits に統一する"
 date: "2023-01-01"
 description: "pnpm、husky、commitlint、commitizenを使ってConventional Commitsに準拠したコミットメッセージを強制する方法"
-tags: ["Git", "pnpm", "commitlint", "Development Tools", "Conventional Commits"]
+tags: ["Git", "Development Tools", "commitlint"]
 image: "/images/blog/conventional-commits-pnpm-commitlint.jpg"
 ---
 

@@ -2,7 +2,7 @@
 title: "Android でビルド時に No version of NDK matched the requested… というエラーが出る場合の理由と対処"
 date: "2020-11-11"
 description: "Android Gradle PluginのバージョンアップでCI環境で発生するNDKバージョンエラーの原因と解決方法を解説"
-tags: ["Android", "NDK", "Gradle", "CI/CD", "Build Error"]
+tags: ["Android", "NDK", "Build Error"]
 image: "/images/blog/android-ndk-version-error.png"
 ---
 

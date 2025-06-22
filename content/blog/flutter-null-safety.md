@@ -2,7 +2,7 @@
 title: "Flutter で Null Safety を有効にする"
 date: "2020-08-03"
 description: "FlutterでNull Safetyを有効にする方法について、Beta版での設定手順とマイグレーションツールの使い方を解説"
-tags: ["Flutter", "Dart", "Null Safety", "Development"]
+tags: ["Flutter", "Dart", "Null Safety"]
 image: "/images/blog/flutter-null-safety.png"
 ---
 

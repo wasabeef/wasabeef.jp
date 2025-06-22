@@ -2,7 +2,7 @@
 title: "[Android] Ktlint を Git Hooks に入れてみた"
 date: "2020-01-24"
 description: "Ktlintを使ってGit Hooksでコードスタイルを自動チェックする方法について、HuskyやGradle pluginでの設定方法を解説"
-tags: ["Android", "Kotlin", "Ktlint", "Git Hooks", "Development Tools"]
+tags: ["Android", "Kotlin", "Development Tools"]
 image: "/images/blog/ktlint-git-hooks.png"
 ---
 

@@ -2,7 +2,7 @@
 title: "Firebase Test Lab を CI に組み込みませんか"
 description: "Firebase Test Lab を Fastlane を使って CI に組み込む方法を解説します。Android アプリ開発において、複数のデバイスとOSバージョンでのテストを自動化し、開発プロセスの心理的安全性を高める取り組みについて紹介します。"
 date: "2019-11-30"
-tags: ["Android", "Firebase", "Testing", "CI/CD", "Fastlane"]
+tags: ["Android", "Firebase", "Testing"]
 image: "https://cdn-images-1.medium.com/max/800/1*C1qiZCDWSG70fyozPRfwAA.png"
 ---
 

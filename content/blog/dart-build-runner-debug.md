@@ -2,7 +2,7 @@
 title: "Dart - build_runner を使った自作 package/plugin のデバッグ方法"
 date: "2020-08-22"
 description: "build_runnerコマンドで自動生成を行う際の、IntelliJでのデバッグ設定方法について詳しく解説"
-tags: ["Dart", "Flutter", "build_runner", "Debug", "Development Tools"]
+tags: ["Dart", "Flutter", "build_runner"]
 image: "/images/blog/dart-build-runner-debug.jpg"
 ---
 

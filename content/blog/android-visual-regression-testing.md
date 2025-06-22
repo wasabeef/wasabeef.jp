@@ -2,7 +2,7 @@
 title: "Android のアプリ開発でも Visual Regression Testing を始めましょう"
 description: "Android アプリ開発での Visual Regression Testing の実装方法について、Firebase Test Lab と reg-suit を組み合わせた手法を解説します。"
 date: "2020-01-07"
-tags: ["Android", "Testing", "Visual Regression", "Firebase", "CI/CD"]
+tags: ["Android", "Testing", "Visual Regression"]
 image: "https://cdn-images-1.medium.com/max/800/0*cwJlsNMFTwpF5Ay7.jpg"
 ---
 

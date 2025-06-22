@@ -2,7 +2,7 @@
 title: "サンフランシスコの渡米記 〜入国編〜"
 date: "2017-03-24"
 description: "サンフランシスコへの6ヶ月間の出張における米国ビザ取得から現地生活まで、B1ビザでの入国体験記"
-tags: ["Travel", "San Francisco", "Visa", "Life"]
+tags: ["Travel", "San Francisco", "Visa"]
 image: "/images/blog/san-francisco-immigration.jpg"
 ---
 

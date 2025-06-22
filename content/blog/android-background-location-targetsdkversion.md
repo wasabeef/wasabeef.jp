@@ -2,7 +2,7 @@
 title: "[Android] targetSdkVersion (29, 30)別によるバックグラウンド位置情報取得の挙動差"
 date: "2020-07-15"
 description: "Android 10以降でのバックグラウンド位置情報取得における、targetSdkVersionごとの挙動の違いについて解説"
-tags: ["Android", "Location", "Permission", "Android 10", "Android 11"]
+tags: ["Android", "Location", "Permission"]
 image: "/images/blog/android-background-location.jpg"
 ---
 
