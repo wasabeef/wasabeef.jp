@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Navigation } from "@/components/navigation";
 import { TagBadge } from "@/components/tag-badge";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { ShareButtons } from "@/components/share-buttons";
+import { PageViews } from "@/components/page-views";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
 import { Clock, Calendar, ArrowLeft } from "lucide-react";
@@ -137,12 +139,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <span>{post.readingTime}分で読める</span>
                   </div>
                 )}
+                <PageViews slug={post.slug} />
               </div>
             </header>
 
             {/* Article Content */}
             <div className="prose-container">
               <MarkdownRenderer content={post.content} />
+            </div>
+
+            {/* Share Buttons */}
+            <div className="mt-8">
+              <ShareButtons
+                title={post.title}
+                description={post.excerpt}
+                url={`/blog/${post.slug}`}
+              />
             </div>
 
             {/* Article Footer */}
