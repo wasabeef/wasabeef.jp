@@ -1,6 +1,6 @@
 # wasabeef.jp
 
-Daichi Furiya（Google Developers Expert for Android）のポートフォリオサイト。Next.js 15 と Tailwind CSS で構築された静的サイトです。
+Daichi Furiya のポートフォリオサイト。Next.js 15 と Tailwind CSS で構築された静的サイトです。
 
 ## 🚀 技術スタック
 
