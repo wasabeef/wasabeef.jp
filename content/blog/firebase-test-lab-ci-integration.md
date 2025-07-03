@@ -130,7 +130,7 @@ platform :android do
   lane :test do
     # Build the debug APK
     gradle(task: "assembleDebug")
-    
+
     # Run tests on Firebase Test Lab
     firebase_test_lab_android(
       project_id: "your-firebase-project-id",
@@ -184,7 +184,7 @@ Firebase 用のサービスアカウントは [Firebase console](https://console
 
 プロジェクト設定 ＞ サービスアカウント ＞ 「新しい秘密鍵の生成」
 
-これにより JSON ファイルがダウンロードされるので、先ほどの ***gcloud_service_key_file*** として指定ができます。
+これにより JSON ファイルがダウンロードされるので、先ほどの **_gcloud_service_key_file_** として指定ができます。
 
 ![Service account settings](https://cdn-images-1.medium.com/max/800/1*KWjQXk_A49HVORZ-UQM4Ww.png)
 ![Generate new private key](https://cdn-images-1.medium.com/max/600/1*wgiRElaGRRLvZWvs8LVzdA.png)
@@ -194,7 +194,7 @@ Firebase 用のサービスアカウントは [Firebase console](https://console
 [CircleCI](https://circleci.com/) も [bitrise](https://www.bitrise.io/) も Fastlane が簡単に実行できるように Integration されているので、基本的には以下のように先ほどの Fastfile に設定した lane を使うだけで実行ができると思います。
 
 ```bash
-# fastlane [lane名] 
+# fastlane [lane名]
 fastlane test
 ```
 
@@ -204,11 +204,11 @@ fastlane test
 我々のプロジェクトでは Github へ Push するたびに Firebase Test Lab が実行されています。ただ、その場合には実行デバイスは 1 つとしていますが、この際は、**instrumentation** テストを実行しています。
 
 ```json
-{ 
-   "model":"Pixel2",
-   "version":"27",
-   "locale":"ja_JP",
-   "orientation":"portrait"
+{
+  "model": "Pixel2",
+  "version": "27",
+  "locale": "ja_JP",
+  "orientation": "portrait"
 }
 ```
 
@@ -216,49 +216,49 @@ fastlane test
 また、master に取り込まれた際には、minSdkVersion から最新の API Level まで 8 つのデバイスを **robo** テストで行い、それぞれ 10 分間実行するようにしています。
 
 ```json
-{ 
+{
    "model":"shamu",
    "version":"22",
    "locale":"ja_JP",
    "orientation":"portrait"
 },
-{ 
+{
    "model":"NexusLowRes",
    "version":"23",
    "locale":"ja_JP",
    "orientation":"portrait"
 },
-{ 
+{
    "model":"NexusLowRes",
    "version":"24",
    "locale":"ja_JP",
    "orientation":"portrait"
 },
-{ 
+{
    "model":"NexusLowRes",
    "version":"25",
    "locale":"ja_JP",
    "orientation":"portrait"
 },
-{ 
+{
    "model":"NexusLowRes",
    "version":"26",
    "locale":"ja_JP",
    "orientation":"portrait"
 },
-{ 
+{
    "model":"Nexus6P",
    "version":"27",
    "locale":"ja_JP",
    "orientation":"portrait"
 },
-{ 
+{
    "model":"NexusLowRes",
    "version":"28",
    "locale":"ja_JP",
    "orientation":"portrait"
 },
-{ 
+{
    "model":"blueline",
    "version":"29",
    "locale":"ja_JP",

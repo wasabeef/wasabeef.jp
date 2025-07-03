@@ -26,7 +26,7 @@ export function TweetEmbed({ tweetId, username }: TweetEmbedProps) {
     script.src = "https://platform.twitter.com/widgets.js";
     script.async = true;
     script.charset = "utf-8";
-    
+
     script.onload = () => {
       if (window.twttr) {
         window.twttr.widgets.load();

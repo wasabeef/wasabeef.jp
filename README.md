@@ -80,7 +80,6 @@ date: 2024-01-01
 tags: ["Tag1", "Tag2", "Tag3"]
 image: "https://example.com/image.jpg"
 ---
-
 記事の内容をここに書く...
 ```
 

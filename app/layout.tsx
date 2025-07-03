@@ -110,7 +110,6 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
           </div>
         </ThemeProvider>
-
       </body>
     </html>
   );

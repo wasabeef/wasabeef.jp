@@ -20,12 +20,12 @@ image: "https://cdn-images-1.medium.com/max/800/1*CJbujz_HOZNwk6uRClZMQA.jpeg"
 ## MVVM
 
 まずは MVVM の説明をしていきます。  
-*※知ってる人は読み飛ばしてください*
+_※知ってる人は読み飛ばしてください_
 
 [Flutter Architecture Blueprints](https://github.com/wasabeef/flutter-architecture-blueprints) の [README](https://github.com/wasabeef/flutter-architecture-blueprints#documentation) にも貼ってあるこの図を見てください。
 
 ![Flutter Architecture Blueprints](https://cdn-images-1.medium.com/max/800/1*Uj5dnm3RTQ89uidDpcObHw.jpeg)
-*[Flutter Architecture Blueprints](https://github.com/wasabeef/flutter-architecture-blueprints)*
+_[Flutter Architecture Blueprints](https://github.com/wasabeef/flutter-architecture-blueprints)_
 
 MVVM は [Model–View–ViewModel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) のことです。
 
@@ -35,7 +35,7 @@ UI の実装において、例えばテキストを入力し、バリーデー�
 簡単に説明すると全てのアーキテクチャ共通して言えることですが、何をさせたいのか？その役割によって分離した構成要素とすることです。
 
 ![MVVM](https://cdn-images-1.medium.com/max/800/1*RAKozoRmhVzRIV-DE3o0Yw.png)
-*MVVM*
+_MVVM_
 
 MVVM の構成要素の基本的な考えは  
 **View** は UI (Widget) を描画（出力）し、ユーザからの入力データを受け取ります。  
@@ -117,13 +117,13 @@ class HomeViewModel extends ChangeNotifier {
 
 **9–10 行目**：**ChangeNotifierProvider** は Riverpod のクラスです。HomeViewModel は ChangeNotifier を継承しているので ChangeNotifierProvider を使用することで HomeViewModel を生成し、後述する View 側で読み取ることができます。Android の Dagger でいうところの @Provides です。Riverpod は Lazy initialization なので、使用時に初期化されます。また、テスト時には overrideWithProvider/overrideWithValue メソッドを使うことで HomeViewModel の生成をモックに差し替えたりできます。Lazy initialization だと困る場合には main.dart の ProviderScope の App() を生成する付近で、Riverpod からインスタンス生成の処理を走らせておくといいみたいです。
 
-**12 行目**：HomeViewModel は ChangeNotifier を継承しています。扱うデータは news というデータです。いわゆる Observable です。データが更新されたことを通知したい場合は notifyListeners メソッドを呼ぶことで View 側に通知することができます。*※実際のコードは AppChangeNotifier というエラーハンドリング用を含めたものを継承していますが、説明が複雑になるので割愛します。*
+**12 行目**：HomeViewModel は ChangeNotifier を継承しています。扱うデータは news というデータです。いわゆる Observable です。データが更新されたことを通知したい場合は notifyListeners メソッドを呼ぶことで View 側に通知することができます。_※実際のコードは AppChangeNotifier というエラーハンドリング用を含めたものを継承していますが、説明が複雑になるので割愛します。_
 
 **13–14 行目**：HomeViewModel のコンストラクタです。NewsRepository クラスを受け取ります。
 
 **18,20 行目**：Kotlin でいうバッキングプロパティです。news を外からでも ReadOnly で許可しています。
 
-**22–30 行目**：NewsRepository の getNews というメソッドを使って news データを取ってきています。成功すると 26 行目で _news に格納しています。失敗時には 28 行目の catchError でエラーハンドリングをすることとなります。また 29 行目の whenComplete は成功でも失敗でも最後によばれるので、失敗時は通知する必要ない場合には notifyListeners *の*位置を then 内にしてもいいと思います。
+**22–30 行目**：NewsRepository の getNews というメソッドを使って news データを取ってきています。成功すると 26 行目で \_news に格納しています。失敗時には 28 行目の catchError でエラーハンドリングをすることとなります。また 29 行目の whenComplete は成功でも失敗でも最後によばれるので、失敗時は通知する必要ない場合には notifyListeners *の*位置を then 内にしてもいいと思います。
 
 ### View
 
@@ -142,7 +142,7 @@ class HomePage extends HookWidget {
   Widget build(BuildContext context) {
     // Provider から error を取得
     final error = useProvider(appErrorProvider);
-    
+
     return Scaffold(
       body: HookBuilder(
         builder: (context) {
@@ -153,7 +153,7 @@ class HomePage extends HookWidget {
             () => homeViewModel.fetchNews(),
             [homeViewModel.news.toString()],
           ));
-          
+
           // UI の構築
           return ListView.builder(
             itemCount: homeViewModel.news.length,
@@ -175,7 +175,7 @@ class HomePage extends HookWidget {
 **12 行目**：Flutter Hooks の HooksWidget を継承しています。これを継承しないと、useProvider などのメソッドはランタイムでエラーが発生します。
 
 ![`useContext` can only be called from the build method of HookWidget](https://cdn-images-1.medium.com/max/800/1*VZtaHualTZH4rxqsrki1mw.png)
-*`useContext` can only be called from the build method of HookWidget*
+_`useContext` can only be called from the build method of HookWidget_
 
 Flutter Hooks を使わずに Riverpod ≥0.7.0 だけでやる場合には HookWidget を ConsumerWidget に変えて useProvider から watch にすることで同様のことが可能です。
 
@@ -225,7 +225,7 @@ class Article with _$Article {
 **4 行目**：[Freezed](https://pub.dev/packages/freezed) の自動生成ファイルです。  
 **6 行目**：[Freezed](https://pub.dev/packages/freezed) が内部で使っている [json_serializable](https://pub.dev/packages/json_serializable) の生成ファイルです。  
 **8 行目**：Freezed の生成に必要なアノテーションです。  
-**9 行目**：with _$Article をつけることで Freezed で生成されたクラスを mixin します。  
+**9 行目**：with \_$Article をつけることで Freezed で生成されたクラスを mixin します。  
 **21–22 行目**：json_serializable で生成されたメソッドを使って使いやすくします。
 
 ### Repository

@@ -21,7 +21,7 @@ Xcode には自動生成される機能がないので、このアイデアを�
 Flutter でも Xcode と同様で自動生成される機能はなく、 pubspec.yaml の assets に指定したリソースを文字列で指定しないといけません。これらの手間とリスクをなるべくなくせるように [**FlutterGen**](https://github.com/FlutterGen/flutter_gen) を作りました。
 
 [FlutterGen/flutter_gen](https://github.com/FlutterGen/flutter_gen)
-*The Flutter code generator for your assets, fonts, colors, ... - Get rid of all String-based APIs. Inspired by…*
+_The Flutter code generator for your assets, fonts, colors, ... - Get rid of all String-based APIs. Inspired by…_
 
 pubspec.yaml で画像などのリソース設定に関する詳細は[公式ドキュメント](https://flutter.dev/docs/development/ui/assets-and-images)を参照してください。
 

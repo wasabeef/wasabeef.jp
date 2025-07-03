@@ -16,7 +16,7 @@ Android アプリ開発界隈では、Web 方面に比べると Visual Regressio
 
 参考： [Storybook と reg-suit で気軽にはじめる Visual Regression Testing](https://blog.wadackel.me/2018/storybook-chrome-screenshot-with-reg-viz/)
 
-*この記事の内容としては以下の通りになります。*
+_この記事の内容としては以下の通りになります。_
 
 - Visual Regression Testing とは？
 - reg-suit とは？
@@ -39,7 +39,7 @@ Visual Regression Testing は日本語でいうと視覚的回帰テスト、画
 などなど…
 
 ![変更前と変更後の 2 枚の写真を ImageMagick の compare コマンドで差分を抽出した画像](https://cdn-images-1.medium.com/max/800/0*Qtzg-4fyPYfaUbNX.jpg)
-*※ 変更前と変更後の 2 枚の写真を ImageMagick の compare コマンドで差分を抽出した画像*
+_※ 変更前と変更後の 2 枚の写真を ImageMagick の compare コマンドで差分を抽出した画像_
 
 ### Visual Regression Testing は End-to-End Testing ではない
 
@@ -58,7 +58,7 @@ Visual Regression Testing のために開発されたツールです。
 reg-suit はただのコマンドラインツールでもあるので、ローカル環境でも動作することができます。
 
 ![reg-suit の画像で提供している機能の一部](https://cdn-images-1.medium.com/max/800/1*0_IrBFmE-tVGYt2C8vRV1g.gif)
-*※reg-suit の画像で提供している機能の一部*
+_※reg-suit の画像で提供している機能の一部_
 
 ## Firebase Test Lab と reg-suit を組み合わせ使うには？
 
@@ -93,7 +93,7 @@ import com.google.android.libraries.cloudtesting.screenshots.ScreenShotter
 @Test
 fun testTakeScreenshot() {
     // アプリの UI をセットアップ
-    
+
     // スクリーンショットを撮る
     ScreenShotter.takeScreenshot("main_screen", activity)
 }
@@ -172,7 +172,7 @@ GitHub に通知するには reg-suit の GitHub Apps を設定する必要が�
 
 GitHub Apps： [https://github.com/apps/reg-suit](https://github.com/apps/reg-suit)
 
-***※ json 上のコメントは説明するために敢えて記載しているので消してください。***
+**_※ json 上のコメントは説明するために敢えて記載しているので消してください。_**
 
 ```json
 {
@@ -214,17 +214,17 @@ jobs:
       - image: circleci/android:api-29-node
     steps:
       - checkout
-      
+
       # Firebase Test Lab でスクリーンショットを取得
       - run:
           name: Run Firebase Test Lab
           command: bundle exec fastlane visual_test
-      
+
       # reg-suit の実行
       - run:
           name: Install reg-suit
           command: npm install -g reg-suit
-      
+
       - run:
           name: Run reg-suit
           command: reg-suit run

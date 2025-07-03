@@ -24,11 +24,11 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
-    
+
     /* Code block colors */
     --code-bg: #f8f9fa;
     --code-text: #24292e;
-    
+
     /* Prism token colors */
     --token-comment: #6a737d;
     --token-punctuation: #24292e;
@@ -38,15 +38,17 @@
     --token-keyword: #d73a49;
     --token-function: #6f42c1;
     --token-variable: #e36209;
-    
+
     /* Typography */
-    --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
-    
+    --font-mono:
+      "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+      "Courier New", monospace;
+
     /* Spacing */
     --code-padding: 1.5rem;
     --code-font-size: 0.875rem;
     --code-line-height: 1.6;
-    
+
     /* Scrollbar */
     --scrollbar-track: #e5e7eb;
     --scrollbar-thumb: #9ca3af;
@@ -62,18 +64,21 @@
   *:not(.code-block-container):not(.code-block-container *) {
     @apply border-border;
   }
-  
-  .code-block-container, .code-block-container * {
+
+  .code-block-container,
+  .code-block-container * {
     border: none !important;
   }
 
-  pre, code {
+  pre,
+  code {
     border: none !important;
     border-radius: 0 !important;
   }
 
   /* Override highlight.js theme styles */
-  .hljs, .hljs * {
+  .hljs,
+  .hljs * {
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;

@@ -23,24 +23,24 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       const loadPrism = async () => {
         try {
           const Prism = await import("prismjs");
-          
+
           // Load language components after Prism is loaded
           // JavaScript系
           await import("prismjs/components/prism-javascript");
           await import("prismjs/components/prism-typescript");
           await import("prismjs/components/prism-jsx");
           await import("prismjs/components/prism-tsx");
-          
+
           // Web系
           await import("prismjs/components/prism-css");
           await import("prismjs/components/prism-json");
           await import("prismjs/components/prism-yaml");
           await import("prismjs/components/prism-xml-doc"); // XML サポート
-          
+
           // シェル・スクリプト系
           await import("prismjs/components/prism-bash");
           await import("prismjs/components/prism-shell-session");
-          
+
           // プログラミング言語
           await import("prismjs/components/prism-python");
           await import("prismjs/components/prism-java");
@@ -48,36 +48,36 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
           await import("prismjs/components/prism-swift");
           await import("prismjs/components/prism-dart");
           await import("prismjs/components/prism-ruby");
-          
+
           // ビルドツール
           await import("prismjs/components/prism-gradle");
-          
+
           // 追加言語
           await import("prismjs/components/prism-lua");
           await import("prismjs/components/prism-rust");
           // TypeScript (ts)はJavaScriptの拡張として既にサポート済み
-          
+
           // プラグイン
           await import("prismjs/plugins/line-numbers/prism-line-numbers");
           await import("prismjs/plugins/line-numbers/prism-line-numbers.css");
-          
+
           if (containerRef.current) {
             // line-numbers クラスを追加
-            const preElements = containerRef.current.querySelectorAll('pre');
-            preElements.forEach(pre => {
-              pre.classList.add('line-numbers');
+            const preElements = containerRef.current.querySelectorAll("pre");
+            preElements.forEach((pre) => {
+              pre.classList.add("line-numbers");
             });
-            
+
             Prism.default.highlightAllUnder(containerRef.current);
           }
         } catch (error) {
           // Fail silently in build environments
-          if (process.env.NODE_ENV === 'development') {
-            console.error('Failed to load Prism:', error);
+          if (process.env.NODE_ENV === "development") {
+            console.error("Failed to load Prism:", error);
           }
         }
       };
-      
+
       loadPrism();
     }
   }, [content]);
@@ -112,7 +112,11 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
               <span className="font-mono text-xs uppercase">{language}</span>
             </div>
           )}
-          <pre className={className || "language-text"} {...props} tabIndex={undefined}>
+          <pre
+            className={className || "language-text"}
+            {...props}
+            tabIndex={undefined}
+          >
             {children}
           </pre>
         </div>
@@ -179,7 +183,9 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
           className="text-blue-600 hover:text-blue-800 hover:underline transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noopener noreferrer" : undefined}
-          aria-label={isExternal ? `${children} ${EXTERNAL_LINK.ariaLabel}` : undefined}
+          aria-label={
+            isExternal ? `${children} ${EXTERNAL_LINK.ariaLabel}` : undefined
+          }
         >
           {children}
           {isExternal && (
@@ -194,10 +200,15 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       // Twitter埋め込みのチェック
       const childrenArray = Array.isArray(children) ? children : [children];
       const hasTwitterLink = childrenArray.some((child: any) => {
-        if (typeof child === 'object' && child?.props?.children) {
-          const innerChildren = Array.isArray(child.props.children) ? child.props.children : [child.props.children];
+        if (typeof child === "object" && child?.props?.children) {
+          const innerChildren = Array.isArray(child.props.children)
+            ? child.props.children
+            : [child.props.children];
           return innerChildren.some((innerChild: any) => {
-            return innerChild?.props?.href?.includes('twitter.com') && innerChild?.props?.href?.includes('/status/');
+            return (
+              innerChild?.props?.href?.includes("twitter.com") &&
+              innerChild?.props?.href?.includes("/status/")
+            );
           });
         }
         return false;
@@ -205,12 +216,17 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
 
       if (hasTwitterLink) {
         // Twitter URLを抽出
-        let twitterUrl = '';
+        let twitterUrl = "";
         childrenArray.forEach((child: any) => {
-          if (typeof child === 'object' && child?.props?.children) {
-            const innerChildren = Array.isArray(child.props.children) ? child.props.children : [child.props.children];
+          if (typeof child === "object" && child?.props?.children) {
+            const innerChildren = Array.isArray(child.props.children)
+              ? child.props.children
+              : [child.props.children];
             innerChildren.forEach((innerChild: any) => {
-              if (innerChild?.props?.href?.includes('twitter.com') && innerChild?.props?.href?.includes('/status/')) {
+              if (
+                innerChild?.props?.href?.includes("twitter.com") &&
+                innerChild?.props?.href?.includes("/status/")
+              ) {
                 twitterUrl = innerChild.props.href;
               }
             });

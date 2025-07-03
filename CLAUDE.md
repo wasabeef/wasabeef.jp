@@ -87,12 +87,14 @@ Blog posts are markdown files with frontmatter containing:
 ## Features Implemented
 
 ### Content Management
+
 - Markdown-based blog posts with frontmatter metadata
 - Tag-based filtering (limited to 3 tags per post)
 - Automatic reading time calculation
 - Static page generation for all blog posts
 
 ### UI/UX Features
+
 - Responsive design with mobile-first approach
 - Syntax highlighting with line numbers (Prism.js)
 - Social sharing (X/Twitter, URL copy, native mobile share)
@@ -101,6 +103,7 @@ Blog posts are markdown files with frontmatter containing:
 - Search and filtering by tags
 
 ### Technical Features
+
 - Cloudflare Pages deployment ready
 - Client-side hydration for dynamic components
 - Suspense boundaries for proper static export

@@ -27,9 +27,7 @@ export default function NotFound() {
 
         {/* Error Message */}
         <div className="space-y-2">
-          <p className="text-gray-600">
-            {ERROR_MESSAGES.searchNotFound}
-          </p>
+          <p className="text-gray-600">{ERROR_MESSAGES.searchNotFound}</p>
           <p className="text-sm text-gray-500">
             URLを確認するか、以下のボタンからホームページに戻ってください。
           </p>

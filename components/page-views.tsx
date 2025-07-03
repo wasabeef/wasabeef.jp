@@ -18,10 +18,10 @@ export function PageViews({ slug }: PageViewsProps) {
         const storageKey = `page-views-${slug}`;
         const currentViews = parseInt(localStorage.getItem(storageKey) || "0");
         const newViews = currentViews + 1;
-        
+
         // Update localStorage
         localStorage.setItem(storageKey, newViews.toString());
-        
+
         // Set views state
         setViews(newViews);
         setLoading(false);

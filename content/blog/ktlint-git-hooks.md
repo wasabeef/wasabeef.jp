@@ -72,7 +72,7 @@ husky は npm で管理されているので、npm install を行います。
 ```
 
 ```bash
-% git commit -m "commit comment" 
+% git commit -m "commit comment"
 husky > pre-commit (node v13.7.0)
 Configuration on demand is an incubating feature.
 
