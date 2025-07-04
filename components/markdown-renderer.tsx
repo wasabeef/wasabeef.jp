@@ -7,6 +7,7 @@ import type { Components } from "react-markdown";
 import { generateSlug } from "@/lib/utils";
 import { EXTERNAL_LINK } from "@/lib/constants";
 import { TweetEmbed } from "@/components/tweet-embed";
+import { CodeCopyButton } from "@/components/code-copy-button";
 
 // Custom Prism theme styles in globals.css
 
@@ -80,7 +81,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
 
       loadPrism();
     }
-  }, [content]);
+  });
 
   const components: Components = {
     code({ node, inline, className, children, ...props }) {
@@ -104,18 +105,24 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       const className = codeElement?.props?.className || "";
       const match = /language-(\w+)/.exec(className);
       const language = match ? match[1] : "text"; // デフォルトを text に設定
+      
+      const codeContent = codeElement?.props?.children || "";
 
       return (
         <div className="code-block-container group my-6">
-          {language && (
-            <div className="code-language-label">
-              <span className="font-mono text-xs uppercase">{language}</span>
-            </div>
-          )}
+          <div className="code-header">
+            <CodeCopyButton />
+            {language && (
+              <div className="code-language-label">
+                <span className="font-mono text-xs uppercase">{language}</span>
+              </div>
+            )}
+          </div>
           <pre
             className={className || "language-text"}
             {...props}
             tabIndex={undefined}
+            data-code={codeContent}
           >
             {children}
           </pre>
