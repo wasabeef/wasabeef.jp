@@ -1,17 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
-import type { Metadata } from "next";
 import { ERROR_MESSAGES, NAV_MESSAGES, ICON_SIZES } from "@/lib/constants";
-
-export const metadata: Metadata = {
-  title: ERROR_MESSAGES.pageNotFound,
-  description: ERROR_MESSAGES.searchNotFound,
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
 
 export default function NotFound() {
   return (

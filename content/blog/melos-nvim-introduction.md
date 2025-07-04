@@ -1,7 +1,7 @@
 ---
 title: "Flutter + Melos + Neovim 開発を効率化する melos.nvim を作りました。"
 description: "Melos スクリプトを Neovim から簡単に実行できるプラグインを開発しました。Telescope と連携してスクリプト管理を効率化します。"
-date: 2024-06-22
+date: 2025-06-22
 tags: ["Neovim", "Flutter", "Development Tools"]
 image: "https://github.com/wasabeef/melos.nvim/raw/main/demo.gif"
 ---

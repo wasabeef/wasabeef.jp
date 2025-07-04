@@ -22,8 +22,7 @@
       "@/*": ["./*"]
     },
     "forceConsistentCasingInFileNames": true,
-    "target": "ES2022",
-    "verbatimModuleSyntax": true
+    "target": "ES2022"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

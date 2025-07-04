@@ -8,6 +8,8 @@ export interface Post {
   tags: string[];
   readingTime?: number;
   featured?: boolean;
+  image?: string;
+  description?: string;
 }
 
 export interface BlogMetadata {
@@ -16,6 +18,8 @@ export interface BlogMetadata {
   excerpt: string;
   tags?: string[];
   featured?: boolean;
+  image?: string;
+  description?: string;
 }
 
 export interface SocialLink {

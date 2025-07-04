@@ -73,6 +73,8 @@ export const getPostBySlug = cache(
             : [],
         readingTime,
         featured: metadata.featured || false,
+        image: metadata.image,
+        description: metadata.description || metadata.excerpt || "",
       };
     } catch (error) {
       console.error(`Error getting post by slug ${slug}:`, error);

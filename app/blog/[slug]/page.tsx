@@ -31,21 +31,42 @@ export async function generateMetadata({
       };
     }
 
+    const ogImage = post.image
+      ? post.image.startsWith("http")
+        ? post.image
+        : `https://wasabeef.jp${post.image}`
+      : undefined;
+
     return {
       title: post.title,
-      description: post.excerpt,
+      description: post.description || post.excerpt,
       openGraph: {
         title: post.title,
-        description: post.excerpt,
+        description: post.description || post.excerpt,
         type: "article",
+        url: `https://wasabeef.jp/blog/${post.slug}`,
         publishedTime: post.date,
         authors: ["Daichi Furiya"],
         tags: post.tags,
+        images: ogImage
+          ? [
+              {
+                url: ogImage,
+                width: 1200,
+                height: 630,
+                alt: post.title,
+              },
+            ]
+          : undefined,
+        siteName: "wasabeef.jp",
+        locale: "ja_JP",
       },
       twitter: {
         card: "summary_large_image",
         title: post.title,
-        description: post.excerpt,
+        description: post.description || post.excerpt,
+        images: ogImage ? [ogImage] : undefined,
+        creator: "@wasabeef_jp",
       },
     };
   } catch (error) {
