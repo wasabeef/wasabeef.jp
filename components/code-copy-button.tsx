@@ -10,14 +10,14 @@ export function CodeCopyButton() {
     try {
       // Find the pre element from the button's parent
       const button = e.currentTarget;
-      const container = button.closest('.code-block-container');
-      const preElement = container?.querySelector('pre');
-      
+      const container = button.closest(".code-block-container");
+      const preElement = container?.querySelector("pre");
+
       if (preElement) {
         // Get text content directly from the DOM
         const textToCopy = preElement.textContent || "";
         await navigator.clipboard.writeText(textToCopy);
-        
+
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }

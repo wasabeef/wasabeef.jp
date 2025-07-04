@@ -105,7 +105,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       const className = codeElement?.props?.className || "";
       const match = /language-(\w+)/.exec(className);
       const language = match ? match[1] : "text"; // デフォルトを text に設定
-      
+
       const codeContent = codeElement?.props?.children || "";
 
       return (

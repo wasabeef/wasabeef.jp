@@ -1,0 +1,12 @@
+name = "wasabeef-jp"
+compatibility_date = "2024-01-01"
+
+# KV Namespace binding
+[[kv_namespaces]]
+binding = "PAGE_VIEWS"
+id = "24ab62d569be4f69802e55d4edd9d4fd" # ← ここに取得した ID を貼り付けてください
+
+# D1 Database binding (将来的に使う場合)
+# [[d1_databases]]
+# binding = "DB"
+# database_id = "YOUR_D1_DATABASE_ID"
