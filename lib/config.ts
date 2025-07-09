@@ -7,7 +7,7 @@ export const siteConfig = {
   url: "https://wasabeef.jp",
   ogImage: "https://wasabeef.jp/og.jpg",
   author: {
-    name: "Daichi Furiya",
+    name: "Wasabeef / Daichi Furiya",
     title: "Software Engineer",
     bio: "Google Developers Expert for Android.",
     avatar: "/avatar.jpg",
