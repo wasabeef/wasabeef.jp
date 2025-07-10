@@ -3,6 +3,7 @@ import { LIMITS } from "./constants";
 export const siteConfig = {
   name: "Daichi Furiya",
   title: "ポートフォリオ",
+  siteName: "wasabeef.jp",
   description: "Google Developers Expert for Android。ポートフォリオサイト。",
   url: "https://wasabeef.jp",
   ogImage: "https://wasabeef.jp/og.jpg",

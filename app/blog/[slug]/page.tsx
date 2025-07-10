@@ -8,6 +8,7 @@ import { ShareButtons } from "@/components/share-buttons";
 import { PageViews } from "@/components/page-views";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
+import { siteConfig } from "@/lib/config";
 import { Clock, Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -58,7 +59,7 @@ export async function generateMetadata({
               },
             ]
           : undefined,
-        siteName: "wasabeef.jp",
+        siteName: siteConfig.siteName,
         locale: "ja_JP",
       },
       twitter: {
