@@ -102,7 +102,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     return (
       <div className="flex min-h-screen flex-col items-center p-4 md:p-24">
-        <div className="relative w-full max-w-2xl">
+        <div className="relative w-full max-w-3xl">
           {/* Navigation */}
           <nav
             className="absolute right-0 top-0 z-10"
