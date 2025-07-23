@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "format": "prettier --write .",
-    "build": "node scripts/copy-blog-images.js && next build && cp _worker.js out/",
+    "build": "node scripts/copy-blog-images.js && node scripts/generate-rss.js && next build && cp _worker.js out/",
     "dev": "node scripts/copy-blog-images.js && next dev",
     "lint": "next lint",
     "start": "next start",

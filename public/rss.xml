@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wasabeef</title>
+    <link>https://wasabeef.jp</link>
+    <description>Google Developers Expert for Android / ソフトウェアエンジニア</description>
+    <language>ja</language>
+    <lastBuildDate>Wed, 23 Jul 2025 16:35:08 GMT</lastBuildDate>
+    <atom:link href="https://wasabeef.jp/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Claude Code 疲れから解放される 30+ 個の自動化コマンド</title>
+      <link>https://wasabeef.jp/blog/claude-code-cookbook-guide</link>
+      <description>Claude Code の機能を劇的に拡張する設定集「claude-code-cookbook」の導入から活用まで。30 以上の commands、8 つの専門 roles、自動化 hooks の使い方を詳しく解説します。</description>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/claude-code-cookbook-guide</guid>
+      <category>Claude Code</category>
+      <category>AI</category>
+      <category>開発ツール</category>
+    </item>
+
+    <item>
+      <title>Claude Code の Hooks で日本語を自動整形する設定</title>
+      <link>https://wasabeef.jp/blog/claude-code-hooks-formatter</link>
+      <description>Claude Code の PostToolUse フックを使って、日本語と半角英数字の間に自動でスペースを挿入する方法を紹介</description>
+      <pubDate>Wed, 09 Jul 2025 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/claude-code-hooks-formatter</guid>
+      <category>Claude</category>
+      <category>日本語</category>
+      <category>開発効率化</category>
+    </item>
+
+    <item>
+      <title>Claude Code の --dangerously-skip-permissions を安全に使う Hooks 設定</title>
+      <link>https://wasabeef.jp/blog/claude-code-secure-bash</link>
+      <description>Claude Code の PreToolUse フックと deny-check.sh で、権限スキップ時でも危険なコマンドをブロックする方法</description>
+      <pubDate>Fri, 04 Jul 2025 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/claude-code-secure-bash</guid>
+      <category>Claude</category>
+      <category>セキュリティ</category>
+      <category>開発効率化</category>
+    </item>
+
+    <item>
+      <title>Flutter + Melos + Neovim 開発を効率化する melos.nvim を作りました。</title>
+      <link>https://wasabeef.jp/blog/melos-nvim-introduction</link>
+      <description>Melos スクリプトを Neovim から簡単に実行できるプラグインを開発しました。Telescope と連携してスクリプト管理を効率化します。</description>
+      <pubDate>Sun, 22 Jun 2025 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/melos-nvim-introduction</guid>
+      <category>Neovim</category>
+      <category>Flutter</category>
+      <category>Development Tools</category>
+    </item>
+
+    <item>
+      <title>コード自動生成の FlutterGen を作りました。</title>
+      <link>https://wasabeef.jp/blog/fluttergen-introduction</link>
+      <description>Flutter 向けに画像リソースなどのコードを自動生成するためのツールです。</description>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/fluttergen-introduction</guid>
+      <category>Flutter</category>
+      <category>Dart</category>
+      <category>Development Tools</category>
+    </item>
+
+    <item>
+      <title>Flutter を MVVM で実装する</title>
+      <link>https://wasabeef.jp/blog/flutter-mvvm-implementation</link>
+      <description>この記事は Flutter Architecture Blueprints の解説記事です。今回は Flutter アプリを MVVM で実装する上でどういう形にしていったかを解説していきたいと思います。</description>
+      <pubDate>Fri, 28 Aug 2020 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/flutter-mvvm-implementation</guid>
+      <category>Flutter</category>
+      <category>MVVM</category>
+      <category>Architecture</category>
+    </item>
+
+    <item>
+      <title>Dart - build_runner を使った自作 package/plugin のデバッグ方法</title>
+      <link>https://wasabeef.jp/blog/dart-build-runner-debug</link>
+      <description>build_runnerコマンドで自動生成を行う際の、IntelliJでのデバッグ設定方法について詳しく解説</description>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/dart-build-runner-debug</guid>
+      <category>Dart</category>
+      <category>Flutter</category>
+      <category>build_runner</category>
+    </item>
+
+    <item>
+      <title>#0 Flutter の設計を決める</title>
+      <link>https://wasabeef.jp/blog/flutter-architecture-mvvm</link>
+      <description>Flutter Architecture Blueprintsの実装解説シリーズ第0回。なぜMVVMを選んだのか、その理由と今後の展望について</description>
+      <pubDate>Wed, 19 Aug 2020 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/flutter-architecture-mvvm</guid>
+      <category>Flutter</category>
+      <category>Architecture</category>
+      <category>MVVM</category>
+    </item>
+
+    <item>
+      <title>Flutter で Null Safety を有効にする</title>
+      <link>https://wasabeef.jp/blog/flutter-null-safety</link>
+      <description>FlutterでNull Safetyを有効にする方法について、Beta版での設定手順とマイグレーションツールの使い方を解説</description>
+      <pubDate>Mon, 03 Aug 2020 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/flutter-null-safety</guid>
+      <category>Flutter</category>
+      <category>Dart</category>
+      <category>Null Safety</category>
+    </item>
+
+    <item>
+      <title>[Android] targetSdkVersion (29, 30)別によるバックグラウンド位置情報取得の挙動差</title>
+      <link>https://wasabeef.jp/blog/android-background-location-targetsdkversion</link>
+      <description>Android 10以降でのバックグラウンド位置情報取得における、targetSdkVersionごとの挙動の違いについて解説</description>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/android-background-location-targetsdkversion</guid>
+      <category>Android</category>
+      <category>Location</category>
+      <category>Permission</category>
+    </item>
+
+    <item>
+      <title>[Android] Ktlint を Git Hooks に入れてみた</title>
+      <link>https://wasabeef.jp/blog/ktlint-git-hooks</link>
+      <description>Ktlintを使ってGit Hooksでコードスタイルを自動チェックする方法について、HuskyやGradle pluginでの設定方法を解説</description>
+      <pubDate>Fri, 24 Jan 2020 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/ktlint-git-hooks</guid>
+      <category>Android</category>
+      <category>Kotlin</category>
+      <category>Development Tools</category>
+    </item>
+
+    <item>
+      <title>Android のアプリ開発でも Visual Regression Testing を始めましょう</title>
+      <link>https://wasabeef.jp/blog/android-visual-regression-testing</link>
+      <description>Android アプリ開発での Visual Regression Testing の実装方法について、Firebase Test Lab と reg-suit を組み合わせた手法を解説します。</description>
+      <pubDate>Tue, 07 Jan 2020 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/android-visual-regression-testing</guid>
+      <category>Android</category>
+      <category>Testing</category>
+      <category>Visual Regression</category>
+    </item>
+
+    <item>
+      <title>Firebase Test Lab を CI に組み込みませんか</title>
+      <link>https://wasabeef.jp/blog/firebase-test-lab-ci-integration</link>
+      <description>Firebase Test Lab を Fastlane を使って CI に組み込む方法を解説します。Android アプリ開発において、複数のデバイスとOSバージョンでのテストを自動化し、開発プロセスの心理的安全性を高める取り組みについて紹介します。</description>
+      <pubDate>Sat, 30 Nov 2019 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/firebase-test-lab-ci-integration</guid>
+      <category>Android</category>
+      <category>Firebase</category>
+      <category>Testing</category>
+    </item>
+
+    <item>
+      <title>サンフランシスコの渡米記 〜入国編〜</title>
+      <link>https://wasabeef.jp/blog/san-francisco-immigration</link>
+      <description>サンフランシスコへの6ヶ月間の出張における米国ビザ取得から現地生活まで、B1ビザでの入国体験記</description>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/san-francisco-immigration</guid>
+      <category>Travel</category>
+      <category>San Francisco</category>
+      <category>Visa</category>
+    </item>
+  </channel>
+</rss>
