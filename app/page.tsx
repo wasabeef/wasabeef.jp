@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import { Rss } from "lucide-react";
 import { Profile } from "@/components/profile";
 import { SocialLinks } from "@/components/social-links";
 import { Navigation } from "@/components/navigation";
@@ -89,6 +90,16 @@ export default function HomePage() {
             className="mt-8 text-center text-sm text-muted-foreground"
             role="contentinfo"
           >
+            <div className="mb-4 flex items-center justify-center">
+              <a
+                href="/rss.xml"
+                className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="RSS フィード"
+              >
+                <Rss className="h-5 w-5" />
+                <span className="text-sm"></span>
+              </a>
+            </div>
             <p>
               &copy; {new Date().getFullYear()} {siteConfig.author.name}. All
               rights reserved.
