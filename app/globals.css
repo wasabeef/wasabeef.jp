@@ -144,7 +144,7 @@
 
 /* Code block optimizations */
 .code-block-container {
-  @apply my-6 overflow-hidden relative;
+  @apply my-0 overflow-hidden relative;
   background: var(--code-bg);
   contain: layout paint;
   border: none !important;
@@ -283,13 +283,13 @@ pre:not([class*="language-"]) code {
   content: counter(linenumber);
   color: #9ca3af;
   display: block;
-  padding-right: 0.8em;
+  padding-right: 0.5em;
   text-align: right;
 }
 
 pre[class*="language-"].line-numbers {
   position: relative;
-  padding-left: 3.8em;
+  padding-left: 3.5em;
   counter-reset: linenumber;
 }
 
@@ -299,7 +299,7 @@ pre[class*="language-"].line-numbers > code {
 }
 
 .code-block-container pre.line-numbers {
-  padding-left: 3.8em !important;
+  padding-left: 3.5em !important;
 }
 
 .code-header {
@@ -343,7 +343,7 @@ pre[class*="language-"].line-numbers > code {
 .code-block-container code {
   @apply block;
   padding: 1rem !important;
-  padding-left: 3.8em !important;
+  padding-left: 0.5em !important;
   font-family: var(--font-mono);
   font-size: var(--code-font-size);
   line-height: var(--code-line-height);
@@ -448,7 +448,7 @@ pre[class*="language-"].line-numbers > code {
 }
 
 .prose table {
-  @apply w-full border-collapse;
+  @apply w-full border-collapse my-0;
 }
 
 .prose th,
