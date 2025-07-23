@@ -70,14 +70,12 @@ export const NAV_MESSAGES = {
   backToBlog: "ブログ一覧に戻る",
   viewBlog: "ブログを見る",
   allPosts: "すべての記事",
-  featuredPosts: "注目の記事",
   recentPosts: "最新の記事",
 } as const;
 
 // Magic numbers
 export const LIMITS = {
   postsPerPage: 10,
-  featuredPosts: 3,
   recentPosts: 3,
 } as const;
 

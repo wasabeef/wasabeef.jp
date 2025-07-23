@@ -23,7 +23,6 @@ export const siteConfig = {
   },
   blog: {
     postsPerPage: LIMITS.postsPerPage,
-    featuredPostsCount: LIMITS.featuredPosts,
   },
 } as const;
 

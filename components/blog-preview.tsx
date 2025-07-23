@@ -3,10 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { getRecentPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
 import { Clock } from "lucide-react";
+import { LIMITS } from "@/lib/constants";
 
 export async function BlogPreview() {
   try {
-    const recentPosts = await getRecentPosts(2);
+    const recentPosts = await getRecentPosts(LIMITS.recentPosts);
 
     if (recentPosts.length === 0) {
       return (
