@@ -5,15 +5,15 @@
     <link>https://wasabeef.jp</link>
     <description>Google Developers Expert for Android / ソフトウェアエンジニア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 23 Jul 2025 16:35:08 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jul 2025 06:48:07 GMT</lastBuildDate>
     <atom:link href="https://wasabeef.jp/rss.xml" rel="self" type="application/rss+xml" />
 
     <item>
-      <title>Claude Code 疲れから解放される 30+ 個の自動化コマンド</title>
-      <link>https://wasabeef.jp/blog/claude-code-cookbook-guide</link>
+      <title>Claude Code 疲れを軽減する 30+ 個のカスタムコマンド</title>
+      <link>https://wasabeef.jp/blog/claude-code-cookbook</link>
       <description>Claude Code の機能を劇的に拡張する設定集「claude-code-cookbook」の導入から活用まで。30 以上の commands、8 つの専門 roles、自動化 hooks の使い方を詳しく解説します。</description>
       <pubDate>Thu, 24 Jul 2025 00:00:00 GMT</pubDate>
-      <guid>https://wasabeef.jp/blog/claude-code-cookbook-guide</guid>
+      <guid>https://wasabeef.jp/blog/claude-code-cookbook</guid>
       <category>Claude Code</category>
       <category>AI</category>
       <category>開発ツール</category>

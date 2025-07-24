@@ -1,5 +1,5 @@
 ---
-title: "Claude Code 疲れを軽減させる 30+ 個のカスタムコマンド"
+title: "Claude Code 疲れを軽減する 30+ 個のカスタムコマンド"
 description: "Claude Code の機能を劇的に拡張する設定集「claude-code-cookbook」の導入から活用まで。30 以上の commands、8 つの専門 roles、自動化 hooks の使い方を詳しく解説します。"
 date: "2025-07-24"
 tags: ["Claude Code", "AI", "開発ツール"]
@@ -14,6 +14,13 @@ image: "/images/blog/claude-code-cookbook/ogp.jpg"
 
 **⚠️ 前提**
 この Cookbook は私のワークフローに最適化されています。かなり個人的な好みが反映されていて、尚且つまだ活発に更新中なので、**あくまで参考程度に**見てほしく、使えそうなところだけ使ってみてください。
+
+**個人的によく使うやつ**
+
+- `/pr-auto-update`: PR の説明とラベルを自動で更新する
+- `/pr-feedback`: 他の人の PR レビューコメントを分析する
+- `/check-github-ci`: GitHub Action で発生したエラーを分析する
+- `/screenshot`: スクリーンショットを取得して分析する
 
 ## Claude Code Cookbook とは
 
@@ -54,7 +61,7 @@ git clone https://github.com/wasabeef/claude-code-cookbook.git ~/.claude
 | **/plan**                 | 実装前の計画立案モードを起動し、詳細な実装戦略を策定する                                                                 | 開発・設計       |
 | **/refactor**             | 安全で段階的なコードリファクタリングを実行し、SOLID 原則の適用を検討する                                                 | 開発・設計       |
 | **/spec**                 | 要求事項から [Kiro の spec-driven development](https://kiro.dev/docs/specs/index) に沿った詳細な仕様書を段階的に作成する | 開発・設計       |
-| **/pr-auto-update**       | Pull Request の内容を自動で更新する                                                                                      | プロジェクト管理 |
+| **/pr-auto-update**       | Pull Request の内容(説明、ラベル)を自動で更新する                                                                        | プロジェクト管理 |
 | **/pr-create**            | Git 変更分析に基づく自律 PR 作成で効率的な Pull Request ワークフローを実現する                                           | プロジェクト管理 |
 | **/pr-feedback**          | Pull Request のレビューコメントを効率的に対応し、エラー分析 3 項目アプローチで根本解決を図る                             | プロジェクト管理 |
 | **/pr-issue**             | 現在のリポジトリのオープン Issue 一覧を優先順位付きで表示する                                                            | プロジェクト管理 |
@@ -65,11 +72,11 @@ git clone https://github.com/wasabeef/claude-code-cookbook.git ~/.claude
 | **/role-debate**          | 複数の役割（Role）で、特定のテーマについて議論させる                                                                     | 思考・分析       |
 | **/role-help**            | 利用可能な Role の一覧表示を表示する                                                                                     | 思考・分析       |
 | **/role**                 | 指定した役割（Role）として振る舞う                                                                                       | 思考・分析       |
-| **/sequential-thinking**  | 複雑な問題を段階的に考え、結論を導き出す                                                                                 | 思考・分析       |
+| **/sequential-thinking**  | Sequential Thinking MCP を使用して複雑な問題を段階的に考え、結論を導き出す                                               | 思考・分析       |
 | **/show-plan**            | 現在の実行計画を表示する                                                                                                 | 思考・分析       |
 | **/smart-review**         | 高度なレビューを行い、コード品質を向上させる                                                                             | 思考・分析       |
 | **/ultrathink**           | 複雑な課題や重要な決定に対して、段階的で構造化された思考プロセスを実行する                                               | 思考・分析       |
-| **/context7**             | context7 MCP を使用してコンテキスト管理を行う                                                                            | ユーティリティ   |
+| **/context7**             | Context7 MCP を使用してコンテキスト管理を行う                                                                            | ユーティリティ   |
 | **/screenshot**           | 画面のスクリーンショットを取得し解析する                                                                                 | ユーティリティ   |
 | **/search-gemini**        | Gemini を使って Web 検索を行う                                                                                           | ユーティリティ   |
 | **/style-ai-writting**    | AI が生成したような不自然な文章を検出し、修正する                                                                        | ユーティリティ   |
