@@ -55,7 +55,7 @@ bun install
 bun dev
 ```
 
-開発サーバーは http://localhost:3000 で起動します。
+開発サーバーは <http://localhost:3000> で起動します。
 
 ### ビルド
 
