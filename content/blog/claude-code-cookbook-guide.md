@@ -1,5 +1,5 @@
 ---
-title: "Claude Code 疲れから解放される 30+ 個の自動化コマンド"
+title: "Claude Code 疲れを軽減させる 30+ 個のカスタムコマンド"
 description: "Claude Code の機能を劇的に拡張する設定集「claude-code-cookbook」の導入から活用まで。30 以上の commands、8 つの専門 roles、自動化 hooks の使い方を詳しく解説します。"
 date: "2025-07-24"
 tags: ["Claude Code", "AI", "開発ツール"]
@@ -39,45 +39,45 @@ git clone https://github.com/wasabeef/claude-code-cookbook.git ~/.claude
 
 `/commands` ディレクトリ内の Markdown ファイルとして保存されています。`/` に続けてファイル名を入力すると実行できます。
 
-| コマンド | 説明 | カテゴリ |
-| :-------------------------- | :--- | :--- |
-| **/analyze-dependencies** | プロジェクトの依存関係を分析し、循環依存や構造的な問題を視覚化する | 分析・調査 |
-| **/analyze-performance** | アプリケーションのパフォーマンス問題を分析し、改善提案を提供する | 分析・調査 |
-| **/check-fact** | プロジェクト内のコードベース、ドキュメントを参照し、与えられた情報の正確性を確認する | 分析・調査 |
-| **/check-github-ci** | GitHub Actions の CI 状況を監視し、完了まで追跡する | 分析・調査 |
-| **/check-prompt** | 現在のプロンプトの内容をレビューし、改善案を提示する | 分析・調査 |
-| **/task** | 専用エージェントを起動して、複雑な検索・調査・分析タスクを自律的に実行する | 分析・調査 |
-| **/commit-message** | 変更内容に基づいてコミットメッセージだけを生成する | 開発・設計 |
-| **/design-patterns** | デザインパターンに基づいた実装を提案・レビューする | 開発・設計 |
-| **/explain-code** | 選択されたコードの機能やロジックを分かりやすく説明する | 開発・設計 |
-| **/fix-error** | エラーメッセージを元に、コードの修正案を提示する | 開発・設計 |
-| **/plan** | 実装前の計画立案モードを起動し、詳細な実装戦略を策定する | 開発・設計 |
-| **/refactor** | 安全で段階的なコードリファクタリングを実行し、SOLID 原則の適用を検討する | 開発・設計 |
-| **/spec** | 要求事項から [Kiro の spec-driven development](https://kiro.dev/docs/specs/index) に沿った詳細な仕様書を段階的に作成する | 開発・設計 |
-| **/pr-auto-update** | Pull Request の内容を自動で更新する | プロジェクト管理 |
-| **/pr-create** | Git 変更分析に基づく自律 PR 作成で効率的な Pull Request ワークフローを実現する | プロジェクト管理 |
-| **/pr-feedback** | Pull Request のレビューコメントを効率的に対応し、エラー分析 3 項目アプローチで根本解決を図る | プロジェクト管理 |
-| **/pr-issue** | 現在のリポジトリのオープン Issue 一覧を優先順位付きで表示する | プロジェクト管理 |
-| **/pr-list** | 現在のリポジトリのオープン PR 一覧を優先順位付きで表示する | プロジェクト管理 |
-| **/pr-review** | Pull Request の体系的レビューでコード品質とアーキテクチャの健全性を確保する | プロジェクト管理 |
-| **/semantic-commit** | 大きな変更を意味のある最小単位に分割し、セマンティックなコミットメッセージで順次コミットする | プロジェクト管理 |
-| **/multi-role** | 複数の役割（Role）を組み合わせて、同じ対象を並行分析し統合レポートを生成する | 思考・分析 |
-| **/role-debate** | 複数の役割（Role）で、特定のテーマについて議論させる | 思考・分析 |
-| **/role-help** | 利用可能な Role の一覧表示を表示する | 思考・分析 |
-| **/role** | 指定した役割（Role）として振る舞う | 思考・分析 |
-| **/sequential-thinking** | 複雑な問題を段階的に考え、結論を導き出す | 思考・分析 |
-| **/show-plan** | 現在の実行計画を表示する | 思考・分析 |
-| **/smart-review** | 高度なレビューを行い、コード品質を向上させる | 思考・分析 |
-| **/ultrathink** | 複雑な課題や重要な決定に対して、段階的で構造化された思考プロセスを実行する | 思考・分析 |
-| **/context7** | context7 MCP を使用してコンテキスト管理を行う | ユーティリティ |
-| **/screenshot** | 画面のスクリーンショットを取得し解析する | ユーティリティ |
-| **/search-gemini** | Gemini を使って Web 検索を行う | ユーティリティ |
-| **/style-ai-writting** | AI が生成したような不自然な文章を検出し、修正する | ユーティリティ |
-| **/update-dart-doc** | Dart ファイルの DartDoc コメントを体系的に管理し、高品質な日本語ドキュメントを継続する | ユーティリティ |
-| **/update-doc-string** | 複数言語対応のドキュメント文字列を統一的に管理・更新する | ユーティリティ |
-| **/update-flutter-deps** | Flutter プロジェクトの依存関係を安全に更新する | ユーティリティ |
-| **/update-node-deps** | Node.js プロジェクトの依存関係を安全に更新する | ユーティリティ |
-| **/update-rust-deps** | Rust プロジェクトの依存関係を安全に更新する | ユーティリティ |
+| コマンド                  | 説明                                                                                                                     | カテゴリ         |
+| :------------------------ | :----------------------------------------------------------------------------------------------------------------------- | :--------------- |
+| **/analyze-dependencies** | プロジェクトの依存関係を分析し、循環依存や構造的な問題を視覚化する                                                       | 分析・調査       |
+| **/analyze-performance**  | アプリケーションのパフォーマンス問題を分析し、改善提案を提供する                                                         | 分析・調査       |
+| **/check-fact**           | プロジェクト内のコードベース、ドキュメントを参照し、与えられた情報の正確性を確認する                                     | 分析・調査       |
+| **/check-github-ci**      | GitHub Actions の CI 状況を監視し、完了まで追跡する                                                                      | 分析・調査       |
+| **/check-prompt**         | 現在のプロンプトの内容をレビューし、改善案を提示する                                                                     | 分析・調査       |
+| **/task**                 | 専用エージェントを起動して、複雑な検索・調査・分析タスクを自律的に実行する                                               | 分析・調査       |
+| **/commit-message**       | 変更内容に基づいてコミットメッセージだけを生成する                                                                       | 開発・設計       |
+| **/design-patterns**      | デザインパターンに基づいた実装を提案・レビューする                                                                       | 開発・設計       |
+| **/explain-code**         | 選択されたコードの機能やロジックを分かりやすく説明する                                                                   | 開発・設計       |
+| **/fix-error**            | エラーメッセージを元に、コードの修正案を提示する                                                                         | 開発・設計       |
+| **/plan**                 | 実装前の計画立案モードを起動し、詳細な実装戦略を策定する                                                                 | 開発・設計       |
+| **/refactor**             | 安全で段階的なコードリファクタリングを実行し、SOLID 原則の適用を検討する                                                 | 開発・設計       |
+| **/spec**                 | 要求事項から [Kiro の spec-driven development](https://kiro.dev/docs/specs/index) に沿った詳細な仕様書を段階的に作成する | 開発・設計       |
+| **/pr-auto-update**       | Pull Request の内容を自動で更新する                                                                                      | プロジェクト管理 |
+| **/pr-create**            | Git 変更分析に基づく自律 PR 作成で効率的な Pull Request ワークフローを実現する                                           | プロジェクト管理 |
+| **/pr-feedback**          | Pull Request のレビューコメントを効率的に対応し、エラー分析 3 項目アプローチで根本解決を図る                             | プロジェクト管理 |
+| **/pr-issue**             | 現在のリポジトリのオープン Issue 一覧を優先順位付きで表示する                                                            | プロジェクト管理 |
+| **/pr-list**              | 現在のリポジトリのオープン PR 一覧を優先順位付きで表示する                                                               | プロジェクト管理 |
+| **/pr-review**            | Pull Request の体系的レビューでコード品質とアーキテクチャの健全性を確保する                                              | プロジェクト管理 |
+| **/semantic-commit**      | 大きな変更を意味のある最小単位に分割し、セマンティックなコミットメッセージで順次コミットする                             | プロジェクト管理 |
+| **/multi-role**           | 複数の役割（Role）を組み合わせて、同じ対象を並行分析し統合レポートを生成する                                             | 思考・分析       |
+| **/role-debate**          | 複数の役割（Role）で、特定のテーマについて議論させる                                                                     | 思考・分析       |
+| **/role-help**            | 利用可能な Role の一覧表示を表示する                                                                                     | 思考・分析       |
+| **/role**                 | 指定した役割（Role）として振る舞う                                                                                       | 思考・分析       |
+| **/sequential-thinking**  | 複雑な問題を段階的に考え、結論を導き出す                                                                                 | 思考・分析       |
+| **/show-plan**            | 現在の実行計画を表示する                                                                                                 | 思考・分析       |
+| **/smart-review**         | 高度なレビューを行い、コード品質を向上させる                                                                             | 思考・分析       |
+| **/ultrathink**           | 複雑な課題や重要な決定に対して、段階的で構造化された思考プロセスを実行する                                               | 思考・分析       |
+| **/context7**             | context7 MCP を使用してコンテキスト管理を行う                                                                            | ユーティリティ   |
+| **/screenshot**           | 画面のスクリーンショットを取得し解析する                                                                                 | ユーティリティ   |
+| **/search-gemini**        | Gemini を使って Web 検索を行う                                                                                           | ユーティリティ   |
+| **/style-ai-writting**    | AI が生成したような不自然な文章を検出し、修正する                                                                        | ユーティリティ   |
+| **/update-dart-doc**      | Dart ファイルの DartDoc コメントを体系的に管理し、高品質な日本語ドキュメントを継続する                                   | ユーティリティ   |
+| **/update-doc-string**    | 複数言語対応のドキュメント文字列を統一的に管理・更新する                                                                 | ユーティリティ   |
+| **/update-flutter-deps**  | Flutter プロジェクトの依存関係を安全に更新する                                                                           | ユーティリティ   |
+| **/update-node-deps**     | Node.js プロジェクトの依存関係を安全に更新する                                                                           | ユーティリティ   |
+| **/update-rust-deps**     | Rust プロジェクトの依存関係を安全に更新する                                                                              | ユーティリティ   |
 
 ### コマンド実行例
 
@@ -113,7 +113,6 @@ PR #4517 の CI チェック状況を確認しました。
 | WIP                          | ✅ pass | 1s     | WIP 状態チェック        |
 | action-semantic-pull-request | ✅ pass | 0s     | セマンティック PR 検証   |
 ```
-
 
 #### `/pr-create` - 自動 PR 作成
 
@@ -171,7 +170,6 @@ feat: ユーザー認証システムの実装
 
 PR URL: https://github.com/example/repo/pull/123
 ```
-
 
 #### `/semantic-commit` - コミットの自動分割
 
@@ -231,16 +229,16 @@ $ /semantic-commit
 
 `/roles` ディレクトリ内で定義されています。Claude に専門家の視点を持たせて、より良い回答を得られます。
 
-| ロール | 説明 |
-| :--- | :--- |
-| **/role analyzer** | システム分析の専門家として、コードやアーキテクチャの分析を行う |
-| **/role architect** | ソフトウェアアーキテクトとして、設計に関するレビューや提案をする |
-| **/role frontend** | フロントエンドの専門家として、UI/UX やパフォーマンスに関する動的をする |
-| **/role mobile** | モバイルアプリ開発の専門家として、iOS/Android のベストプラクティスに基づいた回答をする |
-| **/role performance** | パフォーマンス最適化の専門家として、速度やメモリ使用量の改善を提案する |
-| **/role qa** | QA エンジニアとして、テスト戦略や品質保証の観点からレビューする |
-| **/role reviewer** | コードレビューアとして、可読性や保守性の観点からコードを評価する |
-| **/role security** | セキュリティ専門家として、脆弱性やセキュリティリスクを指摘する |
+| ロール                | 説明                                                                                   |
+| :-------------------- | :------------------------------------------------------------------------------------- |
+| **/role analyzer**    | システム分析の専門家として、コードやアーキテクチャの分析を行う                         |
+| **/role architect**   | ソフトウェアアーキテクトとして、設計に関するレビューや提案をする                       |
+| **/role frontend**    | フロントエンドの専門家として、UI/UX やパフォーマンスに関する動的をする                 |
+| **/role mobile**      | モバイルアプリ開発の専門家として、iOS/Android のベストプラクティスに基づいた回答をする |
+| **/role performance** | パフォーマンス最適化の専門家として、速度やメモリ使用量の改善を提案する                 |
+| **/role qa**          | QA エンジニアとして、テスト戦略や品質保証の観点からレビューする                        |
+| **/role reviewer**    | コードレビューアとして、可読性や保守性の観点からコードを評価する                       |
+| **/role security**    | セキュリティ専門家として、脆弱性やセキュリティリスクを指摘する                         |
 
 #### `/role-debate` - 専門家同士の議論
 
@@ -361,80 +359,66 @@ Phase 4: 統合結論
 
 `settings.json` で設定して、開発作業を自動化できます。
 
-| 実行スクリプト | イベント | 説明 |
-| :--- | :--- | :--- |
-| **deny-check.sh** | **PreToolUse** | **rm -rf /** のような危険なコマンドの実行を未然に防ぐ |
-| **check-ai-commit.sh** | **PreToolUse** | **git commit** でコミットメッセージに AI の痕跡が含まれている場合にエラーを出す |
-| **ja-space-format.sh** | **PostToolUse** | ファイル保存時に、日本語と英数字の間のスペースを自動で整形する |
-| **auto-comment.sh** | **PostToolUse** | 新規ファイル作成時や大幅な編集時に、docstring や API ドキュメントの追加を促す |
-| **notify-waiting** | **Notification** | Claude がユーザーの確認を待っている時に、macOS の通知センターでお知らせする |
-| **check-continue.sh** | **Stop** | タスク完了時に、継続可能なタスクがないか確認する |
-| **(osascript)** | **Stop** | 全タスク完了時に、macOS の通知センターで完了をお知らせする |
+| 実行スクリプト         | イベント         | 説明                                                                            |
+| :--------------------- | :--------------- | :------------------------------------------------------------------------------ |
+| **deny-check.sh**      | **PreToolUse**   | **rm -rf /** のような危険なコマンドの実行を未然に防ぐ                           |
+| **check-ai-commit.sh** | **PreToolUse**   | **git commit** でコミットメッセージに AI の痕跡が含まれている場合にエラーを出す |
+| **ja-space-format.sh** | **PostToolUse**  | ファイル保存時に、日本語と英数字の間のスペースを自動で整形する                  |
+| **auto-comment.sh**    | **PostToolUse**  | 新規ファイル作成時や大幅な編集時に、docstring や API ドキュメントの追加を促す   |
+| **notify-waiting**     | **Notification** | Claude がユーザーの確認を待っている時に、macOS の通知センターでお知らせする     |
+| **check-continue.sh**  | **Stop**         | タスク完了時に、継続可能なタスクがないか確認する                                |
+| **(osascript)**        | **Stop**         | 全タスク完了時に、macOS の通知センターで完了をお知らせする                      |
 
 ---
 
 ## Step 5: 実際に使ってみる
 
-開発の一連の流れで、どのコマンドをいつ使うか見てみましょう：
+開発の一連の流れで、どのコマンドを大まかに書いてみました。
 
-### 開発フローチャート
+### 開発フローチャート例
 
-```
-┌─────────────────┐
-│     要件定義     │
-├─────────────────┤
-│ /spec           │ → 仕様書と実装計画
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│      設計       │
-├─────────────────┤
-│ /role architect │ → アーキテクチャ相談
-│ /role security  │ → セキュリティ検討
-│ /role-debate    │ → トレードオフ議論
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│       実装       │
-├─────────────────┤
-│   Claude Code   │
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│     レビュー     │
-├─────────────────┤
-│ /smart-review   │ → 品質チェック
-│ /analyze-*      │ → 問題分析
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│     コミット     │
-├─────────────────┤
-│ /semantic-commit│ → 変更を分割
-│ /commit-message │ → メッセージ生成
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│    PR 作成      │
-├─────────────────┤
-│ /pr-create      │ → PR 自動作成
-│ /check-github-ci│ → CI 状況確認
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│     修正対応     │
-├─────────────────┤
-│ /pr-feedback    │ → レビュー対応
-│ /fix-error      │ → エラー修正
-│ /explain-code   │ → コード理解
-│ /refactor       │ → コード改善
-│ /pr-auto-update │ → PR 更新
-└─────────────────┘
+```mermaid
+flowchart TB
+    Start([タスク確認]) --> PRList["/pr-list<br/>オープン PR 一覧"]
+    Start --> PRIssue["/pr-issue<br/>オープン Issue 一覧"]
+
+    PRList --> TaskType{種類は？}
+    PRIssue --> TaskType
+
+    TaskType -->|新機能| Plan["/spec<br/>要件定義・設計"]
+    TaskType -->|バグ修正| Fix["/fix-error<br/>エラー分析"]
+    TaskType -->|リファクタリング| Refactor["/refactor<br/>改善"]
+    TaskType -->|レビュー| Review["/pr-review<br/>レビュー"]
+
+    Plan --> Design["/role architect<br/>/role-debate<br/>設計相談"]
+    Design --> Implementation[実装・テスト]
+    Fix --> Implementation
+    Refactor --> Implementation
+    Review --> Implementation
+
+    Implementation --> Check["/smart-review<br/>品質チェック"]
+    Check --> CI["/check-github-ci<br/>CI 状況確認"]
+    CI --> Commit["/semantic-commit<br/>目的単位でコミット"]
+    Commit --> PR["/pr-create<br/>PR 自動作成"]
+
+    PR --> Status{問題あり？}
+    Status -->|はい| Feedback["修正対応<br/>/pr-feedback<br/>/fix-error"]
+    Status -->|いいえ| End([完了])
+
+    Feedback --> Implementation
+
+    classDef commandBox fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,rx:5,ry:5
+    classDef processBox fill:#f3f4f6,stroke:#374151,stroke-width:2px,rx:5,ry:5
+
+    class PRList,PRIssue,Plan,Fix,Refactor,Review,Design,Check,CI,Commit,PR,Feedback commandBox
+    class Implementation processBox
+
+    %%{init: {'theme':'base', 'themeVariables': { 'fontSize': '14px'}}}%%
 ```
 
 ## カスタマイズ
 
-自分の環境に合わせて簡単にカスタマイズできます
+自分の環境に合わせて簡単にカスタマイズできます。
 
 - **コマンドの追加**: `/commands` に `.md` ファイルを追加するだけです
 - **ロールの追加**: `/roles` に `.md` ファイルを追加するだけです
@@ -457,4 +441,3 @@ Phase 4: 統合結論
 おしまい
 
 GitHub: [wasabeef/claude-code-cookbook](https://github.com/wasabeef/claude-code-cookbook)
-
