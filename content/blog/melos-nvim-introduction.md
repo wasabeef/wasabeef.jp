@@ -155,4 +155,4 @@ vim.keymap.set("n", "<leader>mo", ":MelosOpen<CR>")
 地味に打つの面倒くさかったので楽になりました。
 おしまい
 
-GitHub: https://github.com/wasabeef/melos.nvim
+GitHub: <https://github.com/wasabeef/melos.nvim>

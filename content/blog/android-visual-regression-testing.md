@@ -158,8 +158,8 @@ reg-suit では画像の保存先に、 [AWS S3](https://aws.amazon.com/jp/s3/) 
 まずは reg-suit の設定ファイルを作成
 
 ```bash
-$ npm install -g reg-suit
-$ reg-suit init
+npm install -g reg-suit
+reg-suit init
 ```
 
 以下を実現するために、init 時にプラグインを 3 つ追加しています。

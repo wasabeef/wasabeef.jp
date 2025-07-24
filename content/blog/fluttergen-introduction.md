@@ -72,18 +72,18 @@ Homebrew、Dart Command-line と build_runner 実行の 3パターン用意し�
 また、Flutter プロジェクトをマルチモジュールのように分けている場合などに、pubspec.yaml の指定ができるので使い勝手がいいと思います。
 
 ```bash
-$ brew install FlutterGen/tap/fluttergen
-$ fluttergen -h
-$ fluttergen
+brew install FlutterGen/tap/fluttergen
+fluttergen -h
+fluttergen
 ```
 
 **2. Dart Command-line として使う**
 [FlutterGen](https://github.com/FlutterGen/flutter_gen) は Flutter SDK に依存せずに作ってあるので、Dart のコマンドとして使うことができます。Homebrew と同じく、**生成処理が速い**です。
 
 ```bash
-$ dart pub global activate flutter_gen
-$ fluttergen -h
-$ fluttergen
+dart pub global activate flutter_gen
+fluttergen -h
+fluttergen
 ```
 
 **3. build_runner に依存して使う**
@@ -100,7 +100,7 @@ dev_dependencies:
 flutter pub get コマンドで Package をダウンロードしたら build_runner を次のように実行してください。
 
 ```bash
-$ flutter packages pub run build_runner build
+flutter packages pub run build_runner build
 ```
 
 ## 設定
@@ -145,7 +145,7 @@ Flutter apps 標準の `**flutter**` に加えて `**flutter_gen**`の設定を�
 
 [FlutterGen](https://github.com/FlutterGen/flutter_gen) の話ではないですが Flutter は[公式ドキュメントによると](https://flutter.dev/docs/development/ui/assets-and-images) assets/image/ と指定した場合はそれ以下のサブディレクトリ内を再帰的に検索しにいかないので注意が必要です。
 
-pubspec.yaml の `flutter: `に以下のように assets を設定するサンプルがあるとします。
+pubspec.yaml の `flutter:`に以下のように assets を設定するサンプルがあるとします。
 assets は画像だけではなく、json など指定することができます。
 
 ```yaml

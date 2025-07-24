@@ -16,15 +16,15 @@ Flutter Architecture Blueprints の実装解説
 できるだけ難しい説明はせずに、これだけ知っていればアプリが作れるくらいの記事にしたいと思っています。
 
 今後のざっくり予定記事  
-#1 MVVM で実現するための構成要素(ライブラリ)の説明と使い方とか  
-#2 ネットワーク通信を実装する上で使ったもの  
-#3 ローカルにデータを保存する上で使ったもの  
-#4 海外対応、ローカライズで使ったもの  
-#5 Dark テーマ、Light テーマなど  
-#6 API 周りのテスト  
-#7 UI のテスト  
-#8 CI とか  
-#番外 Flutter で使われているの Skia とは一体なんなのか、何が優れているのか
+# 1 MVVM で実現するための構成要素(ライブラリ)の説明と使い方とか  
+# 2 ネットワーク通信を実装する上で使ったもの  
+# 3 ローカルにデータを保存する上で使ったもの  
+# 4 海外対応、ローカライズで使ったもの  
+# 5 Dark テーマ、Light テーマなど  
+# 6 API 周りのテスト  
+# 7 UI のテスト  
+# 8 CI とか  
+# 番外 Flutter で使われているの Skia とは一体なんなのか、何が優れているのか
 
 ![Flutter Architecture](https://cdn-images-1.medium.com/max/800/1*FLuU7MDbD6ldMum-2r41xg.jpeg)
 
@@ -56,7 +56,7 @@ MVVM の本質は UI をビジネスロジックなどから分離すること�
 ## [The Elm Architecture (Model-View-Update)](https://guide.elm-lang.jp/architecture/)
 
 MVVM で開発して画面数が増えてきた時に気づいたことがあります。その本質である UI をロジックから分離して他のところで再利用するということが実際にはほとんどないこと。  
-Flutter のリアクティブフレームワークのようなウィジェットの再構築が常に行われるようなのと ViewModel の同期を保つことが複雑になりえることがあるなと思ったので、近いうちに [The Elm Architecture (Model-View-Update) ](https://guide.elm-lang.jp/architecture/)でシンプルに実装してみるかもしれません。
+Flutter のリアクティブフレームワークのようなウィジェットの再構築が常に行われるようなのと ViewModel の同期を保つことが複雑になりえることがあるなと思ったので、近いうちに [The Elm Architecture (Model-View-Update)](https://guide.elm-lang.jp/architecture/)でシンプルに実装してみるかもしれません。
 
 ## あとがき
 

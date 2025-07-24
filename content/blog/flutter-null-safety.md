@@ -14,7 +14,7 @@ Flutter で 現段階(2020/11/20)の Beta 機能である Null Safety を使う�
 ## 1. Flutter と dart を Beta channel にする
 
 ```bash
-$ flutter channel beta
+flutter channel beta
 ```
 
 ## 2. pubspec.yaml の sdk を **2.12.x–x** 以上を指定する

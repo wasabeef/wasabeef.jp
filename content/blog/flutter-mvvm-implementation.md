@@ -123,7 +123,7 @@ class HomeViewModel extends ChangeNotifier {
 
 **18,20 行目**：Kotlin でいうバッキングプロパティです。news を外からでも ReadOnly で許可しています。
 
-**22–30 行目**：NewsRepository の getNews というメソッドを使って news データを取ってきています。成功すると 26 行目で \_news に格納しています。失敗時には 28 行目の catchError でエラーハンドリングをすることとなります。また 29 行目の whenComplete は成功でも失敗でも最後によばれるので、失敗時は通知する必要ない場合には notifyListeners *の*位置を then 内にしてもいいと思います。
+**22–30 行目**：NewsRepository の getNews というメソッドを使って news データを取ってきています。成功すると 26 行目で \_news に格納しています。失敗時には 28 行目の catchError でエラーハンドリングをすることとなります。また 29 行目の whenComplete は成功でも失敗でも最後によばれるので、失敗時は通知する必要ない場合には notifyListeners _の_位置を then 内にしてもいいと思います。
 
 ### View
 

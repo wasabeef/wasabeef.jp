@@ -13,7 +13,7 @@ image: "/images/blog/dart-build-runner-debug.jpg"
 [json_serializable](https://github.com/google/json_serializable.dart) などを使った時に以下のコマンド叩くと思います。
 
 ```bash
-$ flutter packages pub run build_runner build
+flutter packages pub run build_runner build
 ```
 
 Flutter アプリ (project_type: app) のデバッグをする時は、例えば Intellij などが Fluter Run Configuration を自動生成してくれるので、そんなに困ることはありませんが、build_runner コマンドで source_gen などを package/plugin を開発時にコード自動生成する過程でデバッグしたい時があります。いわゆる Flutter というよりかは Dart 側のデバッグ方法です。
@@ -59,7 +59,7 @@ Working directory：**example** **のパス**
 これで Intellij からでも以下のコマンドが叩かれることになります。
 
 ```bash
-$ flutter packages pub run build_runner build
+flutter packages pub run build_runner build
 ```
 
 **※ 前回のデバッグビルドから何かしらファイルが変更されていないと再度ブレイクポイントに止まらないので注意してください。**
