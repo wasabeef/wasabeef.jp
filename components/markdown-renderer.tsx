@@ -8,6 +8,7 @@ import { generateSlug } from "@/lib/utils";
 import { EXTERNAL_LINK } from "@/lib/constants";
 import { TweetEmbed } from "@/components/tweet-embed";
 import { CodeCopyButton } from "@/components/code-copy-button";
+import { MermaidDiagram } from "@/components/mermaid-diagram";
 
 // Custom Prism theme styles in globals.css
 
@@ -26,13 +27,13 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
           const Prism = await import("prismjs");
 
           // Load language components after Prism is loaded
-          // JavaScript系
+          // JavaScript 系
           await import("prismjs/components/prism-javascript");
           await import("prismjs/components/prism-typescript");
           await import("prismjs/components/prism-jsx");
           await import("prismjs/components/prism-tsx");
 
-          // Web系
+          // Web 系
           await import("prismjs/components/prism-css");
           await import("prismjs/components/prism-json");
           await import("prismjs/components/prism-yaml");
@@ -56,7 +57,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
           // 追加言語
           await import("prismjs/components/prism-lua");
           await import("prismjs/components/prism-rust");
-          // TypeScript (ts)はJavaScriptの拡張として既にサポート済み
+          // TypeScript (ts) は JavaScript の拡張として既にサポート済み
 
           // プラグイン
           await import("prismjs/plugins/line-numbers/prism-line-numbers");
@@ -107,6 +108,11 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       const language = match ? match[1] : "text"; // デフォルトを text に設定
 
       const codeContent = codeElement?.props?.children || "";
+
+      // Mermaid の場合は専用コンポーネントを使用
+      if (language === "mermaid") {
+        return <MermaidDiagram chart={String(codeContent)} />;
+      }
 
       return (
         <div className="code-block-container group my-6">
@@ -204,7 +210,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       );
     },
     blockquote({ children }) {
-      // Twitter埋め込みのチェック
+      // Twitter 埋め込みのチェック
       const childrenArray = Array.isArray(children) ? children : [children];
       const hasTwitterLink = childrenArray.some((child: any) => {
         if (typeof child === "object" && child?.props?.children) {
@@ -222,7 +228,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       });
 
       if (hasTwitterLink) {
-        // Twitter URLを抽出
+        // Twitter URL を抽出
         let twitterUrl = "";
         childrenArray.forEach((child: any) => {
           if (typeof child === "object" && child?.props?.children) {
