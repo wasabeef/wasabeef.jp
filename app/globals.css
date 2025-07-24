@@ -563,3 +563,14 @@ pre[class*="language-"].line-numbers > code {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Mermaid Diagram Styles */
+.mermaid-container {
+  @apply flex justify-center items-center min-h-[200px];
+}
+
+/* Force Mermaid SVG to be responsive */
+.mermaid-container svg {
+  max-width: 100% !important;
+  height: auto !important;
+}
