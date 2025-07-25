@@ -61,7 +61,7 @@ git clone https://github.com/wasabeef/claude-code-cookbook.git ~/.claude
 | **/plan**                 | 実装前の計画立案モードを起動し、詳細な実装戦略を策定する                                                                 | 開発・設計       |
 | **/refactor**             | 安全で段階的なコードリファクタリングを実行し、SOLID 原則の適用を検討する                                                 | 開発・設計       |
 | **/spec**                 | 要求事項から [Kiro の spec-driven development](https://kiro.dev/docs/specs/index) に沿った詳細な仕様書を段階的に作成する | 開発・設計       |
-| **/pr-auto-update**       | Pull Request の内容(説明、ラベル)を自動で更新する                                                                        | プロジェクト管理 |
+| **/pr-auto-update**       | Pull Request の内容（説明、ラベル）を自動で更新する                                                                        | プロジェクト管理 |
 | **/pr-create**            | Git 変更分析に基づく自律 PR 作成で効率的な Pull Request ワークフローを実現する                                           | プロジェクト管理 |
 | **/pr-feedback**          | Pull Request のレビューコメントを効率的に対応し、エラー分析 3 項目アプローチで根本解決を図る                             | プロジェクト管理 |
 | **/pr-issue**             | 現在のリポジトリのオープン Issue 一覧を優先順位付きで表示する                                                            | プロジェクト管理 |
@@ -404,11 +404,11 @@ flowchart TB
     Review --> Implementation
 
     Implementation --> Check["/smart-review<br/>品質チェック"]
-    Check --> CI["/check-github-ci<br/>CI 状況確認"]
-    CI --> Commit["/semantic-commit<br/>目的単位でコミット"]
+    Check --> Commit["/semantic-commit<br/>目的単位でコミット"]
     Commit --> PR["/pr-create<br/>PR 自動作成"]
+    PR --> CI["/check-github-ci<br/>CI 状況確認"]
 
-    PR --> Status{問題あり？}
+    CI --> Status{問題あり？}
     Status -->|はい| Feedback["修正対応<br/>/pr-feedback<br/>/fix-error"]
     Status -->|いいえ| End([完了])
 
