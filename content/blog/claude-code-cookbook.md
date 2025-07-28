@@ -10,6 +10,8 @@ image: "/images/blog/claude-code-cookbook/ogp.jpg"
 
 今回は Claude Code をより効果的に活用するための設定集「[wasabeef/claude-code-cookbook](https://github.com/wasabeef/claude-code-cookbook)」について紹介しようと思います。
 
+**2025/07/24 現在までの設定なので最新はリポジトリを確認して下さい**
+
 もう冗長な作業をできるだけコマンドに落とし込むようにしています。特に Role 機能で専門家の視点を切り替えられるのが気に入っています。セキュリティとパフォーマンスの専門家に議論させたり、アーキテクトにレビューしてもらったり、議論を俯瞰して見ているような感覚です。
 
 **⚠️ 前提**
