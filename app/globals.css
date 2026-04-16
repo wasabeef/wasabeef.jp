@@ -480,6 +480,26 @@ pre[class*="language-"].line-numbers > code {
   @apply italic text-gray-700;
 }
 
+.prose details {
+  @apply my-4 border border-gray-200 rounded-lg overflow-hidden;
+}
+
+.prose details summary {
+  @apply px-4 py-3 cursor-pointer font-medium text-gray-900 bg-gray-50 hover:bg-gray-100 transition-colors select-none;
+}
+
+.prose details summary::marker {
+  @apply text-gray-400;
+}
+
+.prose details[open] summary {
+  @apply border-b border-gray-200;
+}
+
+.prose details > :not(summary) {
+  @apply px-4;
+}
+
 /* Responsive improvements */
 @media (max-width: 640px) {
   .code-block-container code {

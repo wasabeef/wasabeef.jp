@@ -2,6 +2,7 @@
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import { useEffect, useRef } from "react";
 import type { Components } from "react-markdown";
 import { generateSlug } from "@/lib/utils";
@@ -305,7 +306,11 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
 
   return (
     <div ref={containerRef} className="prose max-w-none">
-      <ReactMarkdown components={components} remarkPlugins={[remarkGfm]}>
+      <ReactMarkdown
+        components={components}
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+      >
         {content}
       </ReactMarkdown>
     </div>
