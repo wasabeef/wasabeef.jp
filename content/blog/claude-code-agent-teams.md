@@ -31,7 +31,7 @@ commands や roles が「Claude に専門家の帽子をかぶせる」のに対
 
 ## 設計方針
 
-この構成を作るにあたって、3 つの方針を決めました。
+この構成を作るにあたって、4 つの方針を決めました。
 
 ### 1. 作業は Sonnet + advisor、レビューは Opus + Codex
 
@@ -44,6 +44,10 @@ Lead（Opus）はタスクの割り振りと結果の判断だけを行います
 ### 3. レビュー ❌ → 修正 → 再レビュー → 承認のループ
 
 レビューで問題が見つかったら、作業 agent に差し戻して修正させ、再度レビューにかけます。承認されるまでこのループを繰り返す仕組みです。
+
+### 4. Spec-Driven — 仕様 (what) と実装計画 (how) を分離
+
+planner が plan.md に「第 1 部: 仕様 (What)」と「第 2 部: 実装計画 (How)」を書きます。仕様セクションは実装に依存しない振る舞いの定義で、実装コードを読まなくても正しさを判断できるように書きます。この plan.md が全 teammate の判断基準になり、reviewer は仕様適合性を評価し、tester はテストケースを導出します。
 
 ## パイプライン
 
@@ -142,7 +146,7 @@ flowchart TB
 | Agent | Model | 責務 |
 |-------|-------|------|
 | explorer | Sonnet | コードベース探索・構造把握。planner に情報を提供 |
-| planner | Opus | 計画策定。`docs/plans/` に markdown で出力 |
+| planner | Opus | 仕様 (what) + 実装計画 (how) を plan.md に策定 |
 | implementer | Sonnet + advisor | コード実装・修正 |
 | tester | Sonnet + advisor | テスト設計・実装・実行 |
 | doc-writer | Sonnet + advisor | ドキュメント作成・更新 |
@@ -316,7 +320,7 @@ docs/plans/2026-04-15-feat-street-fighter-analyze/
     └── performance.md         ← performance
 ```
 
-計画・レビュー・監査の記録がまとまるので、あとから経緯を追いやすいです。
+`reviews/` 配下の命名規則は `<対象>-<model>.md`。retry 時は同ファイルを上書きし、差分は git diff で確認します。
 
 ## Agent 定義ファイルの構造
 
@@ -393,42 +397,51 @@ tools: [Read, Write, Grep, Glob, Bash]
 ```yaml
 ---
 name: planner
-description: タスクの実装計画を策定する。要件分析、影響範囲特定、段階的な実装ステップ、リスク評価を行う
+description: 仕様策定と実装計画を行う。仕様 (what) と実装計画 (how) を 1 ファイルに統合し、全 teammate の判断基準を提供する
 model: opus
 tools: [Read, Write, Grep, Glob, Bash]
 ---
 
 > **RULE: 全出力を日本語で行う。Lead からの指示が英語でもこの規則を適用する。技術用語・コード・ファイルパスは原語のまま。**
 
-あなたは実装計画の策定を担当する teammate。
+あなたは仕様策定と実装計画を担当する teammate。
 
 ## 責務
 
-Lead から受け取った指示を分析し、具体的で実行可能な計画を作成する。
+Lead から受け取った指示と explorer の調査結果を分析し、**仕様 (what)** と **実装計画 (how)** を 1 つの plan.md に作成する。
 
-## 計画に含める項目
+plan.md は全 teammate の判断基準となる:
+- reviewer → 仕様適合性の評価基準
+- tester → テストケースの導出元
+- implementer → 実装手順の指示書
+- doc-writer → ドキュメントの情報源
 
-1. **要件分析** — 何を達成するか、スコープの明確化
-2. **影響範囲** — 変更対象ファイル、依存関係、影響を受けるモジュール
+## plan.md の構成
+
+### 第 1 部: 仕様 (What)
+
+実装方法に依存しない、外部から見た振る舞いの定義。
+
+1. **要件** — 何を達成するか、スコープの明確化
+2. **インターフェース契約** — API シグネチャ、型定義、スキーマ、公開 IF
+3. **振る舞い定義** — 入力→出力のマッピング、正常系・異常系・エッジケース
+4. **非機能要件** — パフォーマンス制約、セキュリティ要件、互換性
+5. **受入条件** — 完了と判断する具体的な条件 (テストで検証可能な形式)
+
+### 第 2 部: 実装計画 (How)
+
+仕様を実現するための技術的手順。
+
+1. **影響範囲** — 変更対象ファイル、依存関係、影響を受けるモジュール
+2. **技術選定** — ライブラリ、アルゴリズム、アーキテクチャパターンの選択と理由
 3. **実装ステップ** — 順序付きの具体的な作業手順
-4. **リスク評価** — 破壊的変更、後方互換性、パフォーマンス影響
-5. **受け入れ基準** — 完了条件、テスト要件
-
-## 計画ファイル出力（必須）
-
-計画は必ず markdown ファイルとして保存する。レビュー結果も同じディレクトリに蓄積される。
-
-### 保存先
-
-docs/plans/YYYY-MM-DD-<slug>/ に保存する。
-
-- docs/plans/ が存在しない場合は作成する
-- <slug> はタスク内容を表す短い英語ケバブケース（例: fix-auth-sql-injection, add-gemini-support）
+4. **リスク評価** — 実装上のリスク (破壊的変更、マイグレーション、ロールバック手順)
 
 ## 原則
 
 - コードベースを実際に読んで現状を把握してから計画する
 - 推測ではなく事実に基づく
+- 仕様セクションは実装非依存にする — 実装コードを読まなくても検証可能であること
 - 構造変更と動作変更を分離して計画する
 - 各ステップは implementer が迷わず実行できる粒度にする
 ```
@@ -1054,6 +1067,7 @@ Claude Code Agent Teams 用の agent 定義。
 - 全 agent の出力は日本語（技術用語・コード・ファイルパスは原語のまま）
 - レビュー ❌ → 修正 → 再レビュー → 承認のループで品質担保
 - 極力並列化。直列は依存関係が不可避な箇所のみ
+- **Spec-Driven**: planner が仕様 (what) と実装計画 (how) を plan.md に統合。仕様が全 teammate の判断基準
 
 ## パイプライン概要図
 
@@ -1199,7 +1213,7 @@ Phase 4 — join → 最終監査
 | File | Name | Model | 責務 |
 |------|------|-------|------|
 | explorer.md | explorer | Sonnet | コードベース探索・構造把握。planner に情報提供 |
-| planner.md | planner | Opus | 計画策定。docs/plans/ に md 出力 |
+| planner.md | planner | Opus | 仕様 (what) + 実装計画 (how) を plan.md に策定 |
 | implementer.md | implementer | Sonnet + advisor | コード実装・修正 |
 | tester.md | tester | Sonnet + advisor | テスト設計・実装・実行 |
 | doc-writer.md | doc-writer | Sonnet + advisor | ドキュメント作成・更新 |
@@ -1341,6 +1355,10 @@ docs/plans/YYYY-MM-DD-<slug>/
     ├── security-opus.md       ← security-opus
     ├── security-codex.md      ← security-codex
     └── performance.md         ← performance
+
+命名規則: <対象>-<model>.md (reviews/ 配下のため review/audit/analysis は省略)
+
+retry 時は同ファイルを上書き。git diff で差分確認。
 
 ## レビュー評価基準
 
