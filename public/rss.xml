@@ -5,8 +5,30 @@
     <link>https://wasabeef.jp</link>
     <description>Google Developers Expert for Android / ソフトウェアエンジニア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 24 Jul 2025 06:48:07 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 03:18:06 GMT</lastBuildDate>
     <atom:link href="https://wasabeef.jp/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Claude Code の Agent Teams と Codex で Cross Model Review する</title>
+      <link>https://wasabeef.jp/blog/claude-code-agent-teams</link>
+      <description>Claude Code の Agent Teams 機能を使って、計画・実装・レビュー・テスト・ドキュメントの全工程を複数の AI エージェントに委譲する構成を紹介します。</description>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/claude-code-agent-teams</guid>
+      <category>Claude Code</category>
+      <category>AI</category>
+      <category>開発ツール</category>
+    </item>
+
+    <item>
+      <title>entire.io — AI の思考プロセスを git に記録する時代</title>
+      <link>https://wasabeef.jp/blog/entire-io-and-ai-review-future</link>
+      <description>元 GitHub CEO が創った entire.io の仕組みと、AI Review ツールとの組み合わせが変えるコードレビューの未来について、社内登壇の内容をベースに紹介します。</description>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <guid>https://wasabeef.jp/blog/entire-io-and-ai-review-future</guid>
+      <category>AI</category>
+      <category>entire.io</category>
+      <category>コードレビュー</category>
+    </item>
 
     <item>
       <title>Claude Code 疲れを軽減する 30+ 個のカスタムコマンド</title>
