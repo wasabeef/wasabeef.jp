@@ -1,8 +1,8 @@
 ---
-title: "Claude Code の Agent Teams と Codex で Cross Model Review する"
-description: "Claude Code の Agent Teams 機能を使って、計画・実装・レビュー・テスト・ドキュメントの全工程を複数の AI エージェントに委譲する構成を紹介します。"
+title: "Claude Code Agent Teams × Codex で Cross-Model Review する"
+description: "Claude Code の Agent Teams を使って、計画・実装・レビュー・テスト・ドキュメントまで複数の AI エージェントに委譲する構成を紹介します。Opus と Codex による Cross-Model Review で、片方が見落とした問題をもう片方が拾う Dual Review 体制を作ります。"
 date: "2026-04-15"
-tags: ["Claude Code", "AI", "開発ツール"]
+tags: ["Claude Code", "Codex", "コードレビュー"]
 image: "/images/blog/claude-code-agent-teams/agent-teams-running.png"
 ---
 
