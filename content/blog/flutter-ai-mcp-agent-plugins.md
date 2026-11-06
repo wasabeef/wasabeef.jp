@@ -1,7 +1,7 @@
 ---
 title: "Flutter 公式 Agent Skills の中身を読んで、実務で使えるか考える"
 description: "Flutter 公式 Skills を読んでみました。LayoutBuilder の使い分け、pumpAndSettle の注意点、ChangeNotifier を前提とした設計など、既存プロジェクトに取り込む前に見ておきたい箇所を紹介します。"
-date: "2026-11-06"
+date: "2026-10-24"
 tags: ["Flutter", "Dart", "AI", "Agent Skills"]
 ---
 
